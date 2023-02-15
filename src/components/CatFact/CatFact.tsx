@@ -27,7 +27,7 @@ const CatFact = () => {
     return (
         <section className="catFact">
             <div className="catFactBox">
-                <h2 className="factText">{catFact}</h2>
+                <h2 className="factText" data-testid="catFactHeading">{catFact}</h2>
             </div>
             <div className="factButton">
                 <button className="newbtn" onClick={refreshCatFact}>
