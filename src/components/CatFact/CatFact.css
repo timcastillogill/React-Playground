@@ -1,0 +1,48 @@
+section.catFact {
+    height: 330px;
+}
+
+.catFactBox {
+    border: 15px outset #ab3d2c;
+    margin: 30px;
+    border-radius: 10px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+p.factText {
+    text-align: center;
+    padding: 2%;
+    font-size: 1.5vh;
+}
+
+.factButton .newbtn {
+    box-shadow: inset -1px 0px 6px 0px #91b8b3;
+    background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+    background-color: #768d87;
+    border-radius: 5px;
+    border: 1px solid #566963;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Verdana;
+    font-size: 15px;
+    padding: 13px 23px;
+    text-decoration: none;
+    text-shadow: 0px -1px 11px #2b665e;
+}
+.factButton .newbtn:hover {
+    background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color: #6c7c7c;
+}
+.factButton .newbtn:active {
+    position: relative;
+    top: 1px;
+}
+
+div.factButton {
+    display: flex;
+}

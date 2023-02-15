@@ -12,24 +12,25 @@ const CatFact = () => {
     };
 
     const catFactRandomiser = () => {
+        console.log(catFactList)
         setCatFact(
-            catFactList[Math.floor(Math.random() * catFactList.length)].fact
+            catFactList[Math.floor(Math.random() * catFactList.length)]
         );
     };
 
     useEffect(listFactCollector, [catFactList]);
 
-    const refreshCat = () => {
+    const refreshCatFact = () => {
         catFactRandomiser();
     };
 
     return (
         <section className="catFact">
             <div className="catFactBox">
-                <p className="factText">{catFact}</p>
+                <h2 className="factText">{catFact}</h2>
             </div>
             <div className="factButton">
-                <button className="newbtn" onClick={refreshCat}>
+                <button className="newbtn" onClick={refreshCatFact}>
                     Get me a Cat Fact
                 </button>
             </div>
