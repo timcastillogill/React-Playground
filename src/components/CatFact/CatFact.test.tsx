@@ -1,22 +1,21 @@
-import {getByText, render, screen} from "@testing-library/react";
+import {getByText, render, screen, waitFor} from "@testing-library/react";
 import React from "react";
 import CatFact from "./CatFact"
+import useCatFacts from "../../Hooks/useCatFacts";
 
+jest.mock('./CatFact', () => ({
+    useCatFacts: jest.fn(),
+}));
 
-jest.mock("./CatFact")
-const mockCatFacts = jest.mocked(CatFact);
-const FACT_FROM_SERVICE = "This is a cat fact";
-mockCatFacts.mockReturnValueOnce(FACT_FROM_SERVICE);
 
 describe("Given the Cat Fact Component renders", () => {
 
     test("then a div will load with a 'h2' tag inside that will render cat facts", () => {
+        const FACT_FROM_SERVICE = "This is a cat fact";
+        useCatFacts.data.mockResolvedValueOnce(FACT_FROM_SERVICE);
         render(<CatFact/>);
-        mockCatFacts.mock
-        // const fact = screen.getByTestId('catFactHeading');
 
-
-        expect(getByText(FACT_FROM_SERVICE));
+        await waitFor(() => expect(useCatFacts).toHaveBeenCalledTimes(1));
     });
 
     test("then a load button is given to refresh the cat fact", () => {

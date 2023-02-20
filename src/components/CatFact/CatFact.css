@@ -13,6 +13,10 @@ section.catFact {
     background-color: whitesmoke;
 }
 
+.factText {
+    padding: 1em;
+}
+
 p.factText {
     text-align: center;
     padding: 2%;
