@@ -6,10 +6,15 @@ const CatFact = () => {
     const { isLoading, hasError, data } = useCatFacts();
     const [catFact, setCatFact] = useState("");
 
-    const getCatFact = () => {
-        setCatFact(data[Math.floor(Math.random() * data.length)]);
-        console.log(catFact)
+    const getCatFact = async () => {
+        await setCatFact(data[Math.floor(Math.random() * data.length)].fact);
+        return catFact;
     };
+
+    useEffect(() => {
+        getCatFact();
+    }, [catFact])
+
 
     return (
         <section className="catFact">
