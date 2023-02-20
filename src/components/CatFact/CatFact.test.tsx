@@ -8,7 +8,7 @@ const mockCatFacts = jest.mocked(CatFact);
 const FACT_FROM_SERVICE = "This is a cat fact";
 mockCatFacts.mockReturnValueOnce(FACT_FROM_SERVICE);
 
-describe("Given the home page rendering", () => {
+describe("Given the Cat Fact Component renders", () => {
 
     test("then a div will load with a 'h2' tag inside that will render cat facts", () => {
         render(<CatFact/>);
