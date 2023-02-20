@@ -7,13 +7,13 @@ const CatFact = () => {
     const [catFact, setCatFact] = useState("");
 
     const getCatFact = async () => {
-        await setCatFact(data[Math.floor(Math.random() * data.length)].fact);
+        await setCatFact(data[Math.floor(Math.random() * data.length)]['fact']);
         return catFact;
     };
 
     useEffect(() => {
-        getCatFact();
-    }, [catFact])
+        getCatFact()!;
+    }, [data])
 
 
     return (
