@@ -3,7 +3,7 @@ import useCatFacts from "../../Hooks/useCatFacts";
 import "./CatFact.css";
 
 const CatFact = () => {
-    const [isLoading, hasError, data] = useCatFacts();
+    const { isLoading, hasError, data } = useCatFacts();
     const [catFact, setCatFact] = useState("");
 
     const getCatFact = () => {

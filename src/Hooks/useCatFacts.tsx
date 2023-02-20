@@ -1,4 +1,4 @@
-import React, {useEffect, useTransition} from "react";
+import React, { useEffect } from "react";
 import {useState} from "react";
 
 const useCatFacts = () => {
@@ -7,7 +7,6 @@ const useCatFacts = () => {
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
-
         const fetchData = async () => {
             setIsLoading(true);
             setHasError(false);
