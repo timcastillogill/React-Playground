@@ -19,7 +19,9 @@ const CatFact = () => {
     <section className="catFact">
       <div className="catFactBox">
         <div className="factText" data-testid="catFactHeading">
-          {hasError && <p>Something isn't right in cat land</p>}
+          {hasError && (
+            <p data-testid="errorMessage">Something isn't right in cat land</p>
+          )}
           {isLoading ? <h2>Loading...</h2> : <h2>{catFact}</h2>}
         </div>
       </div>
