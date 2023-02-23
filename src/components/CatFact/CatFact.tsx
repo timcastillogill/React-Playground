@@ -7,8 +7,16 @@ const CatFact = () => {
   const [catFact, setCatFact] = useState("");
 
   const getCatFact = async () => {
-    await setCatFact(data[Math.floor(Math.random() * data.length)]["fact"]);
+    setCatFact(factRandomiser());
     return catFact;
+  };
+
+  const factRandomiser = () => {
+    let randomIndex = data[Math.floor(Math.random() * data.length)];
+    if (catFact === randomIndex["fact"]) {
+      factRandomiser();
+    }
+    return randomIndex["fact"];
   };
 
   useEffect(() => {
@@ -22,7 +30,11 @@ const CatFact = () => {
           {hasError && (
             <p data-testid="errorMessage">Something isn't right in cat land</p>
           )}
-          {isLoading ? <h2>Loading...</h2> : <h2>{catFact}</h2>}
+          {isLoading ? (
+            <h2>Loading...</h2>
+          ) : (
+            <h2 id="catFactText">{catFact}</h2>
+          )}
         </div>
       </div>
       <div className="factButton">
