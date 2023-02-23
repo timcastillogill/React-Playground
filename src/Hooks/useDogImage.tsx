@@ -31,6 +31,3 @@ const useDogImage = () => {
 };
 
 export default useDogImage;
-
-// .then((response) => response.json())
-// .then((data) => setDogImage(data.message));
