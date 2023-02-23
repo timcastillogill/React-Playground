@@ -5,11 +5,13 @@ const useDogImage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
+  const dogImageUrl = process.env.DOG_IMAGE_URL as RequestInfo;
+
   const fetchDogImage = async () => {
     setIsLoading(true);
     setHasError(false);
     try {
-      const res = await fetch("https://dog.ceo/api/breeds/image/random");
+      const res = await fetch(dogImageUrl);
       const json = await res.json();
       setDogImage(json.message);
     } catch (error) {
