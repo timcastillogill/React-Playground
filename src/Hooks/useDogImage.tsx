@@ -5,7 +5,7 @@ const useDogImage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  const dogImageUrl = process.env.DOG_IMAGE_URL as RequestInfo;
+  const dogImageUrl = process.env.REACT_APP_DOG_IMAGE_URL as RequestInfo;
 
   const fetchDogImage = async () => {
     setIsLoading(true);
