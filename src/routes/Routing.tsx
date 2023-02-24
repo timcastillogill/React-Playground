@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import CatFactPage from "../pages/CatFactPage";
 import DogImagePage from "../pages/DogImagePage";
 import Header from "../components/Header/Header";
-import ShoppingListPage from "../pages/ShoppingLIstPage/ShoppingLIstPage";
+import ShoppingListPage from "../pages/ShoppingListPage/ShoppingListPage";
 
 const Routing = () => {
   return (
