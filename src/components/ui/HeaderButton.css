@@ -1,0 +1,14 @@
+.button {
+  background: transparent;
+  border: none;
+  padding: 0.5em;
+  border: 1px solid transparent;
+}
+
+.button:hover {
+  background-color: bisque;
+  padding: 0.5em;
+  border-radius: 10px;
+  border: 1px solid green;
+  transition: 0.3s;
+}
