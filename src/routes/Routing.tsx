@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { routerPaths } from "./paths";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/HomePage/HomePage";
 import CatFactPage from "../pages/CatFactPage";
 import DogImagePage from "../pages/DogImagePage";
 import Header from "../components/Header/Header";

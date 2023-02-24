@@ -9,7 +9,7 @@ interface Props {
 
 const HeaderButton: React.FC<Props> = ({ children, onClick, className }) => {
   return (
-    <button className={`${className} button`} onClick={onClick}>
+    <button className={`${className}`} onClick={onClick}>
       {children}
     </button>
   );
