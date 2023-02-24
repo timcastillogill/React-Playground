@@ -20,6 +20,9 @@ const Header = () => {
         <HeaderButton className="navButton dogButton">
           <Link to={routerPaths.dogImage}>Dog Images</Link>
         </HeaderButton>
+        <HeaderButton className="navButton shoppingListButton">
+          <Link to={routerPaths.shoppingList}>Shopping List</Link>
+        </HeaderButton>
       </div>
     </header>
   );
