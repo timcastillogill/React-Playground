@@ -5,4 +5,5 @@ export const routerPaths = {
   home: "/home",
   catFact: "/catFact",
   dogImage: "/dogImage",
+  shoppingList: "/shoppingList",
 };
