@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { routerPaths } from "../../routes/paths";
+import HeaderButton from "../ui/HeaderButton";
 
 const Header = () => {
   return (
@@ -8,15 +9,15 @@ const Header = () => {
       <header>
         <h1 className="appName">Cat Fact App</h1>
       </header>
-      <button>
+      <HeaderButton className="homeButton navButton">
         <Link to={routerPaths.home}>Home</Link>
-      </button>
-      <button>
+      </HeaderButton>
+      <HeaderButton className="navButton">
         <Link to={routerPaths.catFact}>Cat Facts</Link>
-      </button>
-      <button>
+      </HeaderButton>
+      <HeaderButton className="navButton">
         <Link to={routerPaths.dogImage}>Dog Images</Link>
-      </button>
+      </HeaderButton>
     </>
   );
 };
