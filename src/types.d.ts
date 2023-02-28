@@ -7,4 +7,4 @@ type ToggleShoppingListItem = (
   selectedShoppingListItem: ShoppingListItem
 ) => void;
 
-type addShoppingListItem = (text: string) => void;
+type AddShoppingListItem = (text: string) => void;

@@ -1,6 +1,10 @@
-import React, { ChangeEvent, FormEventHandler, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
-const ShoppingListInput: React.FC = ({ addShoppingListItem }) => {
+interface Props {
+  addShoppingListItem: AddShoppingListItem;
+}
+
+const ShoppingListInput: React.FC<Props> = ({ addShoppingListItem }) => {
   const [item, setItem] = useState("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -9,9 +13,10 @@ const ShoppingListInput: React.FC = ({ addShoppingListItem }) => {
     inputValue && setItem(inputValue);
   };
 
-  const handleSubmit = (event: FormEventHandler<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addShoppingListItem(item, false);
+    addShoppingListItem(item);
+    setItem("");
   };
 
   return (

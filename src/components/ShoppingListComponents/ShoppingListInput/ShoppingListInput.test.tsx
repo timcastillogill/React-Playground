@@ -2,10 +2,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import ShoppingListInput from "./ShoppingListInput";
 
-describe("When shopping list component is rendered", () => {
+const addShoppingListItem = jest.fn();
+
+describe("Given a shopping list component is rendered", () => {
   describe("when the user inputs an item and clicks submit", () => {
     test("then the item will be stored and rendered in the list", () => {
-      render(<ShoppingListInput />);
+      render(<ShoppingListInput addShoppingListItem={addShoppingListItem} />);
 
       const inputtedShoppingListItem = screen.getByRole("textbox");
       expect(inputtedShoppingListItem).toBeInTheDocument();

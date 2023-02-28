@@ -8,23 +8,8 @@ const ShoppingListCollection = () => {
     { text: "onions", complete: true },
   ]);
 
-  const handleNewItem = (newItemText: string, complete: boolean) => {
-    setShoppingList([
-      ...shoppingList,
-      { text: newItemText, complete: complete },
-    ]);
-  };
-
-  const listShoppingItems = () => {
-    return shoppingList.map((item) => {
-      <ul>
-        <ShoppingListItem
-          key={item.text}
-          shoppingListItem={item}
-          toggleShoppingListItem={toggleShoppingListItem}
-        />
-      </ul>;
-    });
+  const handleNewItem = (newItemText: string) => {
+    setShoppingList([...shoppingList, { text: newItemText, complete: false }]);
   };
 
   const toggleShoppingListItem = (
@@ -42,9 +27,32 @@ const ShoppingListCollection = () => {
     setShoppingList(newShoppingList);
   };
 
+  const clearShoppingList = () => {
+    setShoppingList([]);
+  };
+
+  const itemsInShoppingList = () => {
+    if (shoppingList.length < 1) {
+      return <p>No Items in the list</p>;
+    } else {
+      <div>
+        <ul>
+          {shoppingList.map((item) => (
+            <ShoppingListItem
+              key={item.text}
+              shoppingListItem={item}
+              toggleShoppingListItem={toggleShoppingListItem}
+            />
+          ))}
+        </ul>
+      </div>;
+    }
+  };
+
   return (
     <>
-      <ul>{listShoppingItems()}</ul>
+      {itemsInShoppingList()}
+      <button onClick={clearShoppingList}>Clear Shopping List</button>
       <ShoppingListInput addShoppingListItem={handleNewItem} />
     </>
   );
