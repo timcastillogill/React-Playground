@@ -1,11 +1,9 @@
 import React from "react";
-import ShoppingListInput from "../../components/ShoppingListInput/ShoppingListInput";
-import ShoppingListCollection from "../../components/ShoppingListCollection/ShoppingListCollection";
+import ShoppingListCollection from "../../components/ShoppingListComponents/ShoppingListCollection/ShoppingListCollection";
 
 const ShoppingListPage = () => {
   return (
     <section>
-      <ShoppingListInput />
       <ShoppingListCollection />
     </section>
   );

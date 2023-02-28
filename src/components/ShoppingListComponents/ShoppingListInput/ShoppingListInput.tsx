@@ -1,15 +1,18 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from "react";
+import React, { ChangeEvent, FormEventHandler, useState } from "react";
 
-const ShoppingListInput = () => {
+const ShoppingListInput: React.FC = ({ addShoppingListItem }) => {
   const [item, setItem] = useState("");
 
-  const handleChange = (event: InputEvent) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    let inputValue = event.target.value;
+    let inputValue = (event.target as HTMLInputElement).value;
     inputValue && setItem(inputValue);
   };
 
-  const handleSubmit = (event: InputEvent) => {};
+  const handleSubmit = (event: FormEventHandler<HTMLFormElement>) => {
+    event.preventDefault();
+    addShoppingListItem(item);
+  };
 
   return (
     <>
