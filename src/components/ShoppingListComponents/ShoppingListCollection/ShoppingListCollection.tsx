@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ShoppingListInput from "../../ShoppingListInput/ShoppingListInput";
+import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
+import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 
 const ShoppingListCollection = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
@@ -17,8 +18,11 @@ const ShoppingListCollection = () => {
   const listShoppingItems = () => {
     return shoppingList.map((item) => {
       <ul>
-        <li>{item.text}</li>
-        <li>{item.complete}</li>
+        <ShoppingListItem
+          key={item.text}
+          shoppingListItem={item}
+          toggleShoppingListItem={toggleShoppingListItem}
+        />
       </ul>;
     });
   };

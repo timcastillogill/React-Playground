@@ -11,7 +11,7 @@ const ShoppingListInput: React.FC = ({ addShoppingListItem }) => {
 
   const handleSubmit = (event: FormEventHandler<HTMLFormElement>) => {
     event.preventDefault();
-    addShoppingListItem(item);
+    addShoppingListItem(item, false);
   };
 
   return (
