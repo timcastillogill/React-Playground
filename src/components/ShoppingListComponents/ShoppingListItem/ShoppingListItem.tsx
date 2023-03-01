@@ -25,6 +25,7 @@ const ShoppingListItem: React.FC<Props> = ({
           onClick={() => {
             toggleShoppingListItem(shoppingListItem);
           }}
+          onChange={() => undefined}
         />{" "}
         {shoppingListItem.text}
       </label>

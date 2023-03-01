@@ -4,12 +4,31 @@ import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 
 const ShoppingListCollection = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
-    { text: "tomatoes", complete: false },
-    { text: "onions", complete: true },
+    { id: 1, text: "tomatoes", complete: false },
+    { id: 2, text: "onions", complete: true },
   ]);
 
+  const checkForDuplicateShoppingItem = (newShoppingItem: string) => {
+    for (const shoppingItem of shoppingList) {
+      if (newShoppingItem === shoppingItem.text) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   const handleNewItem = (newItemText: string) => {
-    setShoppingList([...shoppingList, { text: newItemText, complete: false }]);
+    if (checkForDuplicateShoppingItem(newItemText)) {
+      return window.alert("This item is already in your list!");
+    }
+    setShoppingList([
+      ...shoppingList,
+      {
+        id: Math.floor(Math.random() * 1000),
+        text: newItemText,
+        complete: false,
+      },
+    ]);
   };
 
   const toggleShoppingListItem = (
@@ -31,27 +50,23 @@ const ShoppingListCollection = () => {
     setShoppingList([]);
   };
 
-  const itemsInShoppingList = () => {
-    if (shoppingList.length < 1) {
-      return <p>No Items in the list</p>;
-    } else {
-      <div>
-        <ul>
-          {shoppingList.map((item) => (
-            <ShoppingListItem
-              key={item.text}
-              shoppingListItem={item}
-              toggleShoppingListItem={toggleShoppingListItem}
-            />
-          ))}
-        </ul>
-      </div>;
-    }
-  };
-
   return (
     <>
-      {itemsInShoppingList()}
+      {shoppingList.length < 1 ? (
+        <p>No Items in the list</p>
+      ) : (
+        <div>
+          <ul>
+            {shoppingList.map((item) => (
+              <ShoppingListItem
+                key={item.id}
+                shoppingListItem={item}
+                toggleShoppingListItem={toggleShoppingListItem}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
       <button onClick={clearShoppingList}>Clear Shopping List</button>
       <ShoppingListInput addShoppingListItem={handleNewItem} />
     </>
