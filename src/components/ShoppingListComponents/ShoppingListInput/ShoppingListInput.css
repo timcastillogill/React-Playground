@@ -1,0 +1,9 @@
+.addItem {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.addItem h2 {
+  margin-right: 0.5em;
+}
