@@ -9,3 +9,4 @@ type ToggleShoppingListItem = (
 ) => void;
 
 type AddShoppingListItem = (text: string) => void;
+type InputErrorCheck = ReactNode;

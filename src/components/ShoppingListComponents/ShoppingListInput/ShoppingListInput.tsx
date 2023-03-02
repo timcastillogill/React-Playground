@@ -1,10 +1,15 @@
 import React, { ChangeEvent, useState } from "react";
+import "./ShoppingListInput.css";
 
 interface Props {
   addShoppingListItem: AddShoppingListItem;
+  errorCheck: InputErrorCheck;
 }
 
-const ShoppingListInput: React.FC<Props> = ({ addShoppingListItem }) => {
+const ShoppingListInput: React.FC<Props> = ({
+  addShoppingListItem,
+  errorCheck,
+}) => {
   const [item, setItem] = useState("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +25,7 @@ const ShoppingListInput: React.FC<Props> = ({ addShoppingListItem }) => {
   };
 
   return (
-    <>
+    <div className="addItem">
       <h2>Add item:</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -30,9 +35,10 @@ const ShoppingListInput: React.FC<Props> = ({ addShoppingListItem }) => {
           onChange={handleChange}
           required
         />
+        <p>{errorCheck}</p>
         <button type="submit">Add Item</button>
       </form>
-    </>
+    </div>
   );
 };
 

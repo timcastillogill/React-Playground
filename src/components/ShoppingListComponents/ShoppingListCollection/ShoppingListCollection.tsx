@@ -8,18 +8,11 @@ const ShoppingListCollection = () => {
     { id: 2, text: "onions", complete: true },
   ]);
 
-  const checkForDuplicateShoppingItem = (newShoppingItem: string) => {
-    for (const shoppingItem of shoppingList) {
-      if (newShoppingItem === shoppingItem.text) {
-        return true;
-      }
-    }
-    return false;
-  };
-
   const handleNewItem = (newItemText: string) => {
-    if (checkForDuplicateShoppingItem(newItemText)) {
-      return window.alert("This item is already in your list!");
+    for (const shoppingItem of shoppingList) {
+      if (newItemText === shoppingItem.text) {
+        return inputError(newItemText);
+      }
     }
     setShoppingList([
       ...shoppingList,
@@ -29,6 +22,7 @@ const ShoppingListCollection = () => {
         complete: false,
       },
     ]);
+    return false;
   };
 
   const toggleShoppingListItem = (
@@ -50,6 +44,10 @@ const ShoppingListCollection = () => {
     setShoppingList([]);
   };
 
+  const inputError = (newItemText: string) => {
+    return <p>Duplicate found! You don't need 2 {newItemText}</p>;
+  };
+
   return (
     <>
       {shoppingList.length < 1 ? (
@@ -68,7 +66,10 @@ const ShoppingListCollection = () => {
         </div>
       )}
       <button onClick={clearShoppingList}>Clear Shopping List</button>
-      <ShoppingListInput addShoppingListItem={handleNewItem} />
+      <ShoppingListInput
+        addShoppingListItem={handleNewItem}
+        errorCheck={inputError}
+      />
     </>
   );
 };
