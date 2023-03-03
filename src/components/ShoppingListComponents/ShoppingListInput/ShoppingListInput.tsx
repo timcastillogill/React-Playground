@@ -11,6 +11,7 @@ const ShoppingListInput: React.FC<Props> = ({
   errorCheck,
 }) => {
   const [item, setItem] = useState("");
+  const [error, setError] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -20,8 +21,14 @@ const ShoppingListInput: React.FC<Props> = ({
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addShoppingListItem(item);
-    setItem("");
+    if (errorCheck(item)) {
+      setError(true);
+      setItem("");
+    } else {
+      addShoppingListItem(item);
+      setItem("");
+      setError(false);
+    }
   };
 
   return (
@@ -35,7 +42,7 @@ const ShoppingListInput: React.FC<Props> = ({
           onChange={handleChange}
           required
         />
-        <p>{errorCheck}</p>
+        {error && <p>Duplicate! You don't need 2 of those...</p>}
         <button type="submit">Add Item</button>
       </form>
     </div>

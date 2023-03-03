@@ -8,12 +8,16 @@ const ShoppingListCollection = () => {
     { id: 2, text: "onions", complete: true },
   ]);
 
-  const handleNewItem = (newItemText: string) => {
+  const handleInputError = (newItemText: string) => {
     for (const shoppingItem of shoppingList) {
       if (newItemText === shoppingItem.text) {
-        return inputError(newItemText);
+        return true;
       }
     }
+    return false;
+  };
+
+  const handleNewItem = (newItemText: string) => {
     setShoppingList([
       ...shoppingList,
       {
@@ -44,10 +48,6 @@ const ShoppingListCollection = () => {
     setShoppingList([]);
   };
 
-  const inputError = (newItemText: string) => {
-    return <p>Duplicate found! You don't need 2 {newItemText}</p>;
-  };
-
   return (
     <>
       {shoppingList.length < 1 ? (
@@ -65,10 +65,12 @@ const ShoppingListCollection = () => {
           </ul>
         </div>
       )}
-      <button onClick={clearShoppingList}>Clear Shopping List</button>
+      {shoppingList.length > 0 && (
+        <button onClick={clearShoppingList}>Clear Shopping List</button>
+      )}
       <ShoppingListInput
         addShoppingListItem={handleNewItem}
-        errorCheck={inputError}
+        errorCheck={handleInputError}
       />
     </>
   );
