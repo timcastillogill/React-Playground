@@ -30,17 +30,19 @@ describe("Given a shopping list input component is rendered", () => {
     );
 
     const input = screen.getByRole("textbox");
+    expect(input).toBeInTheDocument();
     const addItemButton = screen.getByRole("button", { name: /add item/i });
+    expect(addItemButton).toBeInTheDocument();
 
     fireEvent.change(input, { target: { value: "apple" } });
     userEvent.click(addItemButton);
+
     fireEvent.change(input, { target: { value: "apple" } });
     userEvent.click(addItemButton);
 
     const duplicateMessage = screen.getByText(
       /duplicate! you don't need 2 of those\.\.\./i
     );
-
     expect(duplicateMessage).toBeInTheDocument();
   });
 });
