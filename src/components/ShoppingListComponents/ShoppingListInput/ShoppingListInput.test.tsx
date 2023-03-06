@@ -21,28 +21,36 @@ describe("Given a shopping list input component is rendered", () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  test("when the user has inputted a duplicate item into the list", () => {
-    render(
-      <ShoppingListInput
-        addShoppingListItem={addShoppingListItem}
-        errorCheck={inputErrorCheck}
-      />
-    );
+  describe("when the user has inputted a duplicate item into the list", () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
 
-    const input = screen.getByRole("textbox");
-    expect(input).toBeInTheDocument();
-    const addItemButton = screen.getByRole("button", { name: /add item/i });
-    expect(addItemButton).toBeInTheDocument();
+    test("will render an error message telling the user there is a duplicate and not add to the list", () => {
+      inputErrorCheck.mockReturnValue("true");
+      render(
+        <ShoppingListInput
+          addShoppingListItem={addShoppingListItem}
+          errorCheck={inputErrorCheck}
+        />
+      );
 
-    fireEvent.change(input, { target: { value: "apple" } });
-    userEvent.click(addItemButton);
+      const input = screen.getByRole("textbox");
+      expect(input).toBeInTheDocument();
+      const addItemButton = screen.getByRole("button", { name: /add item/i });
+      expect(addItemButton).toBeInTheDocument();
 
-    fireEvent.change(input, { target: { value: "apple" } });
-    userEvent.click(addItemButton);
+      fireEvent.change(input, { target: { value: "apple" } });
+      userEvent.click(addItemButton);
 
-    const duplicateMessage = screen.getByText(
-      /duplicate! you don't need 2 of those\.\.\./i
-    );
-    expect(duplicateMessage).toBeInTheDocument();
+      fireEvent.change(input, { target: { value: "apple" } });
+      userEvent.click(addItemButton);
+
+      const duplicateMessage = screen.getByText(
+        /duplicate! you don't need 2 of those\.\.\./i
+      );
+      expect(duplicateMessage).toBeInTheDocument();
+      jest.clearAllMocks();
+    });
   });
 });
