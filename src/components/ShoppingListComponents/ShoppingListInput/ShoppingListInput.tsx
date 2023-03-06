@@ -42,7 +42,14 @@ const ShoppingListInput: React.FC<Props> = ({
           onChange={handleChange}
           required
         />
-        {error && <p>Duplicate! You don't need 2 of those...</p>}
+        {error && (
+          <div>
+            <p>Duplicate! You don't need 2 of those...</p>
+            <p>Or maybe you'd like to know the quantity?</p>
+            <button>Yes</button>
+            <button>No</button>
+          </div>
+        )}
         <button type="submit">Add Item</button>
       </form>
     </div>
