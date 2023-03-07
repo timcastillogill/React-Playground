@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 
@@ -36,6 +36,7 @@ const ShoppingListCollection = () => {
       if (newItemText === shoppingListItem.text) {
         return (shoppingListItem.quantity += 1);
       }
+      return null;
     });
     setShoppingList([...shoppingList]);
   };
@@ -48,6 +49,19 @@ const ShoppingListCollection = () => {
         return {
           ...item,
           complete: !item.complete,
+        };
+      }
+      return item;
+    });
+    setShoppingList(newShoppingList);
+  };
+
+  const increaseQuantity = (selectedShoppingListItem: ShoppingListItem) => {
+    const newShoppingList = shoppingList.map((item) => {
+      if (item === selectedShoppingListItem) {
+        return {
+          ...item,
+          quantity: (item.quantity += 1),
         };
       }
       return item;
@@ -71,6 +85,7 @@ const ShoppingListCollection = () => {
                 key={item.id}
                 shoppingListItem={item}
                 toggleShoppingListItem={toggleShoppingListItem}
+                increaseQuantity={increaseQuantity}
               />
             ))}
           </ul>
