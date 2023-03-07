@@ -3,15 +3,17 @@ import "./ShoppingListInput.css";
 
 interface Props {
   addShoppingListItem: AddShoppingListItem;
-  errorCheck: InputErrorCheck;
+  duplicateCheck: InputDuplicateCheck;
+  additionalItem: AdditionalItem;
 }
 
 const ShoppingListInput: React.FC<Props> = ({
   addShoppingListItem,
-  errorCheck,
+  duplicateCheck,
+  additionalItem,
 }) => {
   const [item, setItem] = useState("");
-  const [error, setError] = useState(false);
+  const [duplicate, setDuplicate] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -19,35 +21,47 @@ const ShoppingListInput: React.FC<Props> = ({
     inputValue && setItem(inputValue);
   };
 
+  const handleUpdateToQuantity = () => {
+    additionalItem(item);
+    setDuplicate(false);
+    setItem("");
+  };
+
+  const handleNoUpdate = () => {
+    setItem("");
+    setDuplicate(false);
+  };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (errorCheck(item)) {
-      setError(true);
-      setItem("");
+    if (duplicateCheck(item)) {
+      setDuplicate(true);
     } else {
       addShoppingListItem(item);
       setItem("");
-      setError(false);
+      setDuplicate(false);
     }
   };
 
   return (
     <div className="addItem">
-      <h2>Add item:</h2>
+      {!duplicate && <h2>Add item:</h2>}
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Item Name"
-          value={item}
-          onChange={handleChange}
-          required
-        />
-        {error && (
+        {!duplicate && (
+          <input
+            type="text"
+            placeholder="Item Name"
+            value={item}
+            onChange={handleChange}
+            required
+          />
+        )}
+        {duplicate && (
           <div>
             <p>Duplicate! You don't need 2 of those...</p>
-            <p>Or maybe you'd like to know the quantity?</p>
-            <button>Yes</button>
-            <button>No</button>
+            <p>Or maybe you'd like to add an additional?</p>
+            <button onClick={handleUpdateToQuantity}>Yes</button>
+            <button onClick={handleNoUpdate}>No</button>
           </div>
         )}
         <button type="submit">Add Item</button>

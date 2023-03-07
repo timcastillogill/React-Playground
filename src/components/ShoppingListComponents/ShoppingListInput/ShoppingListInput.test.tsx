@@ -82,7 +82,7 @@ describe("Given a shopping list input component is rendered", () => {
       expect(duplicateMessage).toBeInTheDocument();
 
       const quantityQuestion = screen.getByText(
-        /or maybe you'd like to add the quantity\?/i
+        /or maybe you'd like to add an additional\?/i
       );
       const quantityQuestionAnswerButtonsYES = screen.getByRole("button", {
         name: /yes/i,

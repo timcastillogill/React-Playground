@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 
@@ -31,14 +31,13 @@ const ShoppingListCollection = () => {
   };
 
   const handleAdditionalItem = (newItemText: string) => {
-    for (const shoppingItem of shoppingList) {
-      if (newItemText === shoppingItem.text) {
-        return (shoppingItem.quantity += 1);
-      } else {
-        console.error(newItemText + " not found in the list");
-        return null;
+    const shoppingListObject = Object.values(shoppingList);
+    Object.values(shoppingListObject).map((shoppingListItem) => {
+      if (newItemText === shoppingListItem.text) {
+        return (shoppingListItem.quantity += 1);
       }
-    }
+    });
+    setShoppingList([...shoppingList]);
   };
 
   const toggleShoppingListItem = (
