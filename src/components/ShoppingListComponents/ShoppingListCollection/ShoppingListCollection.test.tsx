@@ -25,4 +25,17 @@ describe("Given the user has not added anything to their list", () => {
   });
 });
 
-describe("Given the user inputs the same shopping item twice", () => {});
+describe("Given there are items in the shopping list already", () => {
+  test("when the user clicks the plus button the quantity of that item will increase by one", () => {
+    render(<ShoppingListCollection />);
+
+    const plusButton = screen.getByTestId("increaseQuantityButton");
+    const quantityOfItem = screen.getByRole("quantityOfItem");
+
+    expect(plusButton).toBeInTheDocument();
+    expect(quantityOfItem).toBeInTheDocument();
+
+    userEvent.click(plusButton);
+    expect(quantityOfItem).toBe(2);
+  });
+});
