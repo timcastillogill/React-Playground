@@ -1,8 +1,9 @@
 header {
   display: flex;
   flex-direction: column;
-  background-color: azure;
+  background-color: #bec3b7;
 }
 
-.headerButtons {
+header h1 {
+  color: #d069b9;
 }

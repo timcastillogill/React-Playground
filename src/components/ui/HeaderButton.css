@@ -10,14 +10,17 @@ button {
   font-size: 1em;
 }
 
-button:hover {
-  background-color: #d451b6;
-  border: 1px solid #04865c;
-  transition: 0.3s;
+button.navButton {
+  background: #f5f5de;
+  padding: 0.5em 1em;
 }
 
-button a {
-  color: black;
+button.navButton a {
   text-decoration: none;
-  padding: 1em;
+}
+
+.headerButtons button:hover {
+  background-color: #b1deb4;
+  border: 1px solid #b1deb4;
+  transition: 0.3s;
 }
