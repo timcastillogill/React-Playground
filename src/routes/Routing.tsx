@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { routerPaths } from "./paths";
-import HomePage from "../pages/HomePage/HomePage";
-import CatFactPage from "../pages/CatFactPage";
-import DogImagePage from "../pages/DogImagePage";
+import HomePage from "../pages/HomePage/Home";
+import CatFactPage from "../pages/CatFactPage/CatFact";
+import DogImagePage from "../pages/DogImagePage/DogImage";
 import Header from "../components/Header/Header";
-import ShoppingListPage from "../pages/ShoppingListPage/ShoppingListPage";
+import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 
 const Routing = () => {
   return (

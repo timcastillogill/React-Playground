@@ -1,0 +1,15 @@
+section {
+  display: grid;
+  padding: 1em 0em;
+}
+
+section.shoppingListSection li {
+  list-style: none;
+}
+
+section.shoppingListSection ul {
+}
+
+.homePageComponents {
+  display: grid;
+}

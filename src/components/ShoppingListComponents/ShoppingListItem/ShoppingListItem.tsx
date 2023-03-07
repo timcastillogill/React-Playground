@@ -35,6 +35,7 @@ const ShoppingListItem: React.FC<Props> = ({
         test-id="increaseQuantityButton"
         type="button"
         value="+"
+        name="increaseQuantity"
         onClick={() => {
           increaseQuantity(shoppingListItem);
         }}
