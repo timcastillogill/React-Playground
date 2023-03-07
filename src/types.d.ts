@@ -1,5 +1,6 @@
 interface ShoppingListItem {
   id: number;
+  quantity: number;
   text: string;
   complete: boolean;
 }

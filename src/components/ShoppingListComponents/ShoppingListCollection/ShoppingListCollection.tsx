@@ -4,8 +4,8 @@ import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 
 const ShoppingListCollection = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
-    { id: 1, text: "tomatoes", complete: false },
-    { id: 2, text: "onions", complete: true },
+    { id: 1, quantity: 1, text: "tomatoes", complete: false },
+    { id: 2, quantity: 2, text: "onions", complete: true },
   ]);
 
   const handleInputError = (newItemText: string) => {
@@ -22,6 +22,7 @@ const ShoppingListCollection = () => {
       ...shoppingList,
       {
         id: Math.floor(Math.random() * 1000),
+        quantity: 1,
         text: newItemText,
         complete: false,
       },

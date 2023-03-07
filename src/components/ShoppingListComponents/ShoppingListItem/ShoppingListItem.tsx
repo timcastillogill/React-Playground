@@ -27,7 +27,7 @@ const ShoppingListItem: React.FC<Props> = ({
           }}
           onChange={() => undefined}
         />{" "}
-        {shoppingListItem.text}
+        {`${shoppingListItem.quantity}x: ${shoppingListItem.text}`}
       </label>
     </li>
   );
