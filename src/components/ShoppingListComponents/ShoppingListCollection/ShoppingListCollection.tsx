@@ -8,7 +8,7 @@ const ShoppingListCollection = () => {
     { id: 2, quantity: 2, text: "onions", complete: true },
   ]);
 
-  const handleInputError = (newItemText: string) => {
+  const handleDuplicate = (newItemText: string) => {
     for (const shoppingItem of shoppingList) {
       if (newItemText === shoppingItem.text) {
         return true;
@@ -28,6 +28,17 @@ const ShoppingListCollection = () => {
       },
     ]);
     return false;
+  };
+
+  const handleAdditionalItem = (newItemText: string) => {
+    for (const shoppingItem of shoppingList) {
+      if (newItemText === shoppingItem.text) {
+        return (shoppingItem.quantity += 1);
+      } else {
+        console.error(newItemText + " not found in the list");
+        return null;
+      }
+    }
   };
 
   const toggleShoppingListItem = (
@@ -71,7 +82,8 @@ const ShoppingListCollection = () => {
       )}
       <ShoppingListInput
         addShoppingListItem={handleNewItem}
-        errorCheck={handleInputError}
+        duplicateCheck={handleDuplicate}
+        additionalItem={handleAdditionalItem}
       />
     </>
   );

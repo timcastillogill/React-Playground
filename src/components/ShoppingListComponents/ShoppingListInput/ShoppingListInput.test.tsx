@@ -5,13 +5,15 @@ import userEvent from "@testing-library/user-event";
 
 const addShoppingListItem = jest.fn();
 const inputErrorCheck = jest.fn();
+const additionalItem = jest.fn();
 
 describe("Given a shopping list input component is rendered", () => {
   test("then the user has an input and submit button to add their items", () => {
     render(
       <ShoppingListInput
         addShoppingListItem={addShoppingListItem}
-        errorCheck={inputErrorCheck}
+        duplicateCheck={inputErrorCheck}
+        additionalItem={additionalItem}
       />
     );
 
@@ -31,7 +33,8 @@ describe("Given a shopping list input component is rendered", () => {
       render(
         <ShoppingListInput
           addShoppingListItem={addShoppingListItem}
-          errorCheck={inputErrorCheck}
+          duplicateCheck={inputErrorCheck}
+          additionalItem={additionalItem}
         />
       );
 
@@ -58,7 +61,8 @@ describe("Given a shopping list input component is rendered", () => {
       render(
         <ShoppingListInput
           addShoppingListItem={addShoppingListItem}
-          errorCheck={inputErrorCheck}
+          duplicateCheck={inputErrorCheck}
+          additionalItem={additionalItem}
         />
       );
       const input = screen.getByRole("textbox");
