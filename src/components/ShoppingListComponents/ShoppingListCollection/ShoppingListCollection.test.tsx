@@ -2,7 +2,6 @@ import React from "react";
 import ShoppingListCollection from "./ShoppingListCollection";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 
 describe("Given the user has added text to the input", () => {
   test("then the user can clear the list with an onscreen button", () => {
