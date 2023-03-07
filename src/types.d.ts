@@ -10,4 +10,5 @@ type ToggleShoppingListItem = (
 ) => void;
 
 type AddShoppingListItem = (text: string) => void;
-type InputErrorCheck = ReactNode;
+type InputDuplicateCheck = ReactNode;
+type AdditionalItem = ReactNode;
