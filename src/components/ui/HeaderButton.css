@@ -5,21 +5,19 @@ button {
   border: 1px solid black;
   border-radius: 10px;
   margin: 1em 2em;
+  cursor: pointer;
+  font-family: "Arapey", serif;
+  font-size: 1em;
 }
 
 button:hover {
-  background-color: bisque;
-  border: 1px solid green;
+  background-color: #d451b6;
+  border: 1px solid #04865c;
   transition: 0.3s;
-  text-decoration: underline;
-  text-decoration-color: #39113e;
-  text-decoration-thickness: 5px;
 }
 
 button a {
   color: black;
-  font-family: "Arapey", serif;
-  font-size: 1.5em;
   text-decoration: none;
   padding: 1em;
 }

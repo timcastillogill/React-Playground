@@ -1,3 +1,14 @@
+.duplicateContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  color: black;
+  background: black;
+  width: 100%;
+}
+
 .addItem {
   display: flex;
   flex-direction: row;

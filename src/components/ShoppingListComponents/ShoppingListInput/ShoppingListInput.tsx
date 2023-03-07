@@ -57,14 +57,15 @@ const ShoppingListInput: React.FC<Props> = ({
           />
         )}
         {duplicate && (
-          <div>
+          <div className="duplicateContainer">
             <p>Duplicate! You don't need 2 of those...</p>
+            <hr />
             <p>Or maybe you'd like to add an additional?</p>
             <button onClick={handleUpdateToQuantity}>Yes</button>
             <button onClick={handleNoUpdate}>No</button>
           </div>
         )}
-        <button type="submit">Add Item</button>
+        {!duplicate && <button type="submit">Add Item</button>}
       </form>
     </div>
   );
