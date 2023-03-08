@@ -9,7 +9,7 @@ section.shoppingListSection li {
 
 .homePageComponents {
   display: grid;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: 20% 20%;
   grid-gap: 35px;
   align-items: center;
   justify-items: center;

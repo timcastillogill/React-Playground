@@ -6,6 +6,9 @@ section.catFact {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .catFactBox {
@@ -28,28 +31,36 @@ section.catFact {
   margin: 15px 0px;
 }
 
-.factButton .newbtn {
-  box-shadow: inset -1px 0px 6px 0px #91b8b3;
-  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-  background-color: #768d87;
-  border-radius: 5px;
-  border: 1px solid #566963;
-  display: inline-block;
+.ui-button {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #122738, #39113e);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #f5f5de;
   cursor: pointer;
-  color: #ffffff;
-  font-family: Verdana;
-  font-size: 15px;
-  padding: 13px 23px;
-  text-decoration: none;
-  text-shadow: 0px -1px 11px #2b665e;
-}
-.factButton .newbtn:hover {
-  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-  background-color: #6c7c7c;
-}
-.factButton .newbtn:active {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
   position: relative;
-  top: 1px;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+  width: 11em;
+}
+
+.ui-button:hover {
+  box-shadow: #d451b6 0 3px 8px;
 }
 
 div.factButton {

@@ -92,7 +92,9 @@ const ShoppingListCollection = () => {
         </div>
       )}
       {shoppingList.length > 0 && (
-        <button onClick={clearShoppingList}>Clear Shopping List</button>
+        <button className="ui-button" onClick={clearShoppingList}>
+          Clear Shopping List
+        </button>
       )}
       <ShoppingListInput
         addShoppingListItem={handleNewItem}

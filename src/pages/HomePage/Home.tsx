@@ -1,15 +1,15 @@
 import React from "react";
 import "./Home.css";
-import DogImagePage from "../DogImagePage/DogImage";
-import CatFactPage from "../CatFactPage/CatFact";
 import ShoppingListPage from "../ShoppingListPage/ShoppingList";
+import DogImage from "../../components/DogImage/DogImage";
+import CatFact from "../../components/CatFact/CatFact";
 
 const HomePage = () => {
   return (
     <section>
       <div className="homePageComponents">
-        <DogImagePage />
-        <CatFactPage />
+        <DogImage />
+        <CatFact />
         <ShoppingListPage />
       </div>
     </section>

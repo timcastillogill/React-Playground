@@ -38,7 +38,7 @@ const CatFact = () => {
         </div>
       </div>
       <div className="factButton">
-        <button className="newbtn" onClick={getCatFact}>
+        <button className="ui-button" onClick={getCatFact}>
           Get me a Cat Fact
         </button>
       </div>
