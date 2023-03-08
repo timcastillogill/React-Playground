@@ -1,5 +1,5 @@
 section.catFact {
-  height: 330px;
+  height: 270px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -9,24 +9,23 @@ section.catFact {
 }
 
 .catFactBox {
-  border: 15px outset #ab3d2c;
-  margin: 30px;
+  border: 15px outset #34143c;
+  margin: 5%;
   border-radius: 10px;
-  height: 50%;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #f5f5de;
 }
 
 .factText {
   padding: 1em;
 }
 
-p.factText {
-  text-align: center;
-  padding: 2%;
-  font-size: 1.5vh;
+.factText h2 {
+  font-size: 100%;
+  margin: 15px 0px;
 }
 
 .factButton .newbtn {

@@ -7,9 +7,11 @@ section.shoppingListSection li {
   list-style: none;
 }
 
-section.shoppingListSection ul {
-}
-
 .homePageComponents {
   display: grid;
+  grid-template-columns: 45% 45%;
+  grid-gap: 35px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }

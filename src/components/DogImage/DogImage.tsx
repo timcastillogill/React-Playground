@@ -12,7 +12,7 @@ const DogImage = () => {
   };
 
   return (
-    <section className="dogImageSection">
+    <section className="dogImageContents">
       <div className="dogImage">
         {hasError && <p>Sorry, dog image not found..</p>}
         {isLoading ? (

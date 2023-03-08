@@ -2,7 +2,11 @@ import React from "react";
 import DogImage from "../../components/DogImage/DogImage";
 
 const DogImagePage = () => {
-  return <DogImage />;
+  return (
+    <div className="dogImageCard">
+      <DogImage />
+    </div>
+  );
 };
 
-export default DogImage;
+export default DogImagePage;

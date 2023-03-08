@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <div className="title">
-        <h1 className="appName">Cat Fact App</h1>
+        <h1 className="appName">React Playground</h1>
       </div>
       <div className="headerButtons">
         <HeaderButton className="homeButton navButton">
