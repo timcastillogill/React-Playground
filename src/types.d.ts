@@ -9,7 +9,7 @@ type ToggleShoppingListItem = (
   selectedShoppingListItem: ShoppingListItem
 ) => void;
 
-type IncreaseQuantityOfItem = (
+type ChangeQuantityOfItem = (
   selectedShoppingListItem: ShoppingListItem
 ) => void;
 

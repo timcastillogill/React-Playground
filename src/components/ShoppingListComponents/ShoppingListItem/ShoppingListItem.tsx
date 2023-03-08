@@ -1,19 +1,23 @@
 import React from "react";
 import addToBasket from "../../../assets/addToBasket.png";
+import removeFromBasket from "../../../assets/removeFromBasket.png";
+import "./ShoppingListItem.css";
 
 interface Props {
   shoppingListItem: ShoppingListItem;
   toggleShoppingListItem: ToggleShoppingListItem;
-  increaseQuantity: IncreaseQuantityOfItem;
+  increaseQuantity: ChangeQuantityOfItem;
+  decreaseQuantity: ChangeQuantityOfItem;
 }
 
 const ShoppingListItem: React.FC<Props> = ({
   shoppingListItem,
   toggleShoppingListItem,
   increaseQuantity,
+  decreaseQuantity,
 }) => {
   return (
-    <li>
+    <li className="addedShoppingItem">
       <label
         htmlFor=""
         style={{
@@ -32,17 +36,30 @@ const ShoppingListItem: React.FC<Props> = ({
         />{" "}
         {`${shoppingListItem.quantity}x: ${shoppingListItem.text}`}
       </label>
-      <button
-        test-id="increaseQuantityButton"
-        className="addToBasketButtonWrapper"
-        type="button"
-        name="increaseQuantity"
-        onClick={() => {
-          increaseQuantity(shoppingListItem);
-        }}
-      >
-        <img className="addToBasketIcon" src={addToBasket} alt="basketIcon" />
-      </button>
+      <div className="shoppingBasketControls">
+        <button
+          test-id="increaseQuantityButton"
+          className="basket"
+          type="button"
+          name="increaseQuantity"
+          onClick={() => {
+            increaseQuantity(shoppingListItem);
+          }}
+        >
+          <img className="basketIcon" src={addToBasket} alt="basketIcon" />
+        </button>
+        <button
+          test-id="decreaseQuantityButton"
+          className="basket"
+          type="button"
+          name="decreaseQuantity"
+          onClick={() => {
+            decreaseQuantity(shoppingListItem);
+          }}
+        >
+          <img className="basketIcon" src={removeFromBasket} alt="basketIcon" />
+        </button>
+      </div>
     </li>
   );
 };

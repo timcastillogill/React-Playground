@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
+import "./ShoppingListCollection.css";
 
 const ShoppingListCollection = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
@@ -30,7 +31,7 @@ const ShoppingListCollection = () => {
     return false;
   };
 
-  const handleAdditionalItem = (newItemText: string) => {
+  const handleAdditionalQuantityItem = (newItemText: string) => {
     const shoppingListObject = Object.values(shoppingList);
     Object.values(shoppingListObject).map((shoppingListItem) => {
       if (newItemText === shoppingListItem.text) {
@@ -69,6 +70,21 @@ const ShoppingListCollection = () => {
     setShoppingList(newShoppingList);
   };
 
+  const handleRemoveQuantityItem = (
+    selectedShoppingListItem: ShoppingListItem
+  ) => {
+    const newShoppingList = shoppingList.map((item) => {
+      if (item === selectedShoppingListItem && item.quantity >= 1) {
+        return {
+          ...item,
+          quantity: (item.quantity -= 1),
+        };
+      }
+      return item;
+    });
+    setShoppingList(newShoppingList);
+  };
+
   const clearShoppingList = () => {
     setShoppingList([]);
   };
@@ -79,13 +95,14 @@ const ShoppingListCollection = () => {
         <p>No Items in the list</p>
       ) : (
         <div>
-          <ul>
+          <ul className="shoppingListItems">
             {shoppingList.map((item) => (
               <ShoppingListItem
                 key={item.id}
                 shoppingListItem={item}
                 toggleShoppingListItem={toggleShoppingListItem}
                 increaseQuantity={increaseQuantity}
+                decreaseQuantity={handleRemoveQuantityItem}
               />
             ))}
           </ul>
@@ -99,7 +116,7 @@ const ShoppingListCollection = () => {
       <ShoppingListInput
         addShoppingListItem={handleNewItem}
         duplicateCheck={handleDuplicate}
-        additionalItem={handleAdditionalItem}
+        additionalItem={handleAdditionalQuantityItem}
       />
     </>
   );

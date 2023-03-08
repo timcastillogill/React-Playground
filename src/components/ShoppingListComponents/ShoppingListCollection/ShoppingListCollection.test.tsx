@@ -26,11 +26,11 @@ describe("Given the user has not added anything to their list", () => {
 });
 
 describe("Given there are items in the shopping list already", () => {
-  test("when the user clicks the plus button the quantity of that item will increase by one", () => {
+  test("when the user clicks the plus basket icon the quantity of that item will increase by one", () => {
     render(<ShoppingListCollection />);
 
-    const plusButton = screen.getAllByRole("button", {
-      name: /increaseQuantity/i,
+    const plusButton = screen.getByRole("button", {
+      name: /basketIcon/i,
     });
     const quantityOfItem = screen.getByRole("quantityOfItem");
 
@@ -39,5 +39,20 @@ describe("Given there are items in the shopping list already", () => {
 
     userEvent.click(plusButton);
     expect(quantityOfItem).toBe(2);
+  });
+
+  test("when the user clicks the negative basket icon the quantity of that item will decrease by one", () => {
+    render(<ShoppingListCollection />);
+
+    const decreaseButton = screen.getByRole("button", {
+      name: /basketIcon/i,
+    });
+    const quantityOfItem = screen.getByRole("quantityOfItem");
+
+    expect(decreaseButton).toBeInTheDocument();
+    expect(quantityOfItem).toBeInTheDocument();
+
+    userEvent.click(decreaseButton);
+    expect(quantityOfItem).toBe(1);
   });
 });

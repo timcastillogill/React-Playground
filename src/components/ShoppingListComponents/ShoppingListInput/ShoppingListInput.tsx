@@ -45,7 +45,6 @@ const ShoppingListInput: React.FC<Props> = ({
 
   return (
     <div className="addItem">
-      {!duplicate && <h2>Add item:</h2>}
       <form onSubmit={handleSubmit}>
         {!duplicate && (
           <input
