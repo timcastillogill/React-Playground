@@ -1,4 +1,5 @@
 import React from "react";
+import addToBasket from "../../../assets/addToBasket.png";
 
 interface Props {
   shoppingListItem: ShoppingListItem;
@@ -31,17 +32,18 @@ const ShoppingListItem: React.FC<Props> = ({
         />{" "}
         {`${shoppingListItem.quantity}x: ${shoppingListItem.text}`}
       </label>
-      <input
+      <button
         test-id="increaseQuantityButton"
+        className="addToBasketButtonWrapper"
         type="button"
-        value="+"
         name="increaseQuantity"
         onClick={() => {
           increaseQuantity(shoppingListItem);
         }}
-      />
+      >
+        <img className="addToBasketIcon" src={addToBasket} alt="basketIcon" />
+      </button>
     </li>
   );
 };
-
 export default ShoppingListItem;

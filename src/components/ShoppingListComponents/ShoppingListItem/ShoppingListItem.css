@@ -1,0 +1,15 @@
+img.addToBasketIcon {
+  width: 20px;
+}
+
+button.addToBasketButtonWrapper {
+  border: none;
+  display: inline;
+  padding: 0px;
+  margin: 2px 20px;
+}
+
+button.addToBasketButtonWrapper:hover {
+  transform: rotate(359deg);
+  transition: transform 2s;
+}
