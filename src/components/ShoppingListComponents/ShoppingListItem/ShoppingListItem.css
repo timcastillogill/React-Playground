@@ -7,6 +7,7 @@ button.addToBasketButtonWrapper {
   display: inline;
   padding: 0px;
   margin: 2px 20px;
+  transition: transform 2s;
 }
 
 button.addToBasketButtonWrapper:hover {
