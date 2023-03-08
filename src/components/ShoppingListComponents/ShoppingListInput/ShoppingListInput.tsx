@@ -68,7 +68,11 @@ const ShoppingListInput: React.FC<Props> = ({
             </button>
           </div>
         )}
-        {!duplicate && <button type="submit">Add Item</button>}
+        {!duplicate && (
+          <button className="ui-button addItem" type="submit">
+            Add Item
+          </button>
+        )}
       </form>
     </div>
   );

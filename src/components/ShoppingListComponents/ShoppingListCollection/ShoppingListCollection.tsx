@@ -91,6 +91,11 @@ const ShoppingListCollection = () => {
 
   return (
     <>
+      {shoppingList.length > 0 && (
+        <button className="ui-button" onClick={clearShoppingList}>
+          Clear
+        </button>
+      )}
       {shoppingList.length < 1 ? (
         <p>No Items in the list</p>
       ) : (
@@ -107,11 +112,6 @@ const ShoppingListCollection = () => {
             ))}
           </ul>
         </div>
-      )}
-      {shoppingList.length > 0 && (
-        <button className="ui-button" onClick={clearShoppingList}>
-          Clear Shopping List
-        </button>
       )}
       <ShoppingListInput
         addShoppingListItem={handleNewItem}

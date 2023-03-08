@@ -1,4 +1,4 @@
-.ui-button {
+.ui-button .addItem {
   background-color: initial;
   background-image: linear-gradient(-180deg, #122738, #39113e);
   border-radius: 6px;
@@ -19,14 +19,14 @@
   -webkit-user-select: none;
   vertical-align: top;
   white-space: nowrap;
-  width: 50%;
+  width: 30%;
   z-index: 9;
   border: 0;
   transition: box-shadow 0.2s;
   width: 11em;
 }
 
-.ui-button:hover {
+.ui-button .addItem:hover {
   box-shadow: #d451b6 0 3px 8px;
 }
 

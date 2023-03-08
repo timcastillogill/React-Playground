@@ -1,5 +1,4 @@
 .dogImageCard {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
+  width: 70%;
+  margin: 35px auto;
 }

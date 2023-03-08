@@ -5,7 +5,8 @@ body {
   font-family: "Arapey", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #b1deb4;
+  background-image: url("./assets/colorkit.png");
+  background-size: contain;
 }
 
 code {
