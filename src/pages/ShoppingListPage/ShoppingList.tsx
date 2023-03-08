@@ -1,6 +1,6 @@
 import React from "react";
 import ShoppingListCollection from "../../components/ShoppingListComponents/ShoppingListCollection/ShoppingListCollection";
-import "./ShoppingListPage.css";
+import "./ShoppingList.css";
 
 const ShoppingListPage = () => {
   return (

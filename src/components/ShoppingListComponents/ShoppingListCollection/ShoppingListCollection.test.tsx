@@ -29,7 +29,9 @@ describe("Given there are items in the shopping list already", () => {
   test("when the user clicks the plus button the quantity of that item will increase by one", () => {
     render(<ShoppingListCollection />);
 
-    const plusButton = screen.getByTestId("increaseQuantityButton");
+    const plusButton = screen.getAllByRole("button", {
+      name: /increaseQuantity/i,
+    });
     const quantityOfItem = screen.getByRole("quantityOfItem");
 
     expect(plusButton).toBeInTheDocument();
