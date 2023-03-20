@@ -1,9 +1,7 @@
-header {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid #39113e;
-}
-
 header h1 {
   color: #d069b9;
+}
+
+header {
+  width: 7%;
 }

@@ -7,20 +7,17 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <div className="title">
-        <h1 className="appName">React Playground</h1>
-      </div>
       <div className="headerButtons">
-        <HeaderButton className="homeButton navButton">
+        <HeaderButton className="navButton navButton">
           <Link to={routerPaths.home}>Home</Link>
         </HeaderButton>
-        <HeaderButton className="navButton catButton">
+        <HeaderButton className="navButton navButton">
           <Link to={routerPaths.catFact}>Cat Facts</Link>
         </HeaderButton>
-        <HeaderButton className="navButton dogButton">
+        <HeaderButton className="navButton navButton">
           <Link to={routerPaths.dogImage}>Dog Images</Link>
         </HeaderButton>
-        <HeaderButton className="navButton shoppingListButton">
+        <HeaderButton className="navButton navButton">
           <Link to={routerPaths.shoppingList}>Shopping List</Link>
         </HeaderButton>
       </div>

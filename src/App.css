@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.page_wrapper {
+  display: flex;
+  flex-direction: row;
+}

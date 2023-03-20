@@ -1,26 +1,31 @@
-button {
-  background: transparent;
-  border: none;
+.headerButtons {
+  display: flex;
+  justify-content: space-evenly;
+  background: #faf2c9;
+  padding: 2%;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+}
+
+button.navButton a {
+  background: #faf2c9;
   padding: 0.5em;
-  border: 1px solid black;
-  border-radius: 10px;
   margin: 1em 2em;
   cursor: pointer;
   font-family: "Arapey", serif;
   font-size: 1em;
-}
-
-button.navButton {
-  background: #f5f5de;
-  padding: 0.5em 1em;
-}
-
-button.navButton a {
+  transition: 0.5s;
   text-decoration: none;
 }
 
-.headerButtons button:hover {
-  background-color: #b1deb4;
-  border: 1px solid #b1deb4;
-  transition: 0.3s;
+button.navButton {
+  background: none;
+  border: none;
+  transform: rotate(-90deg);
+}
+
+button.navButton a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
 }

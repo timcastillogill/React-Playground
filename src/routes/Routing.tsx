@@ -10,17 +10,22 @@ import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 const Routing = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route
-          path={routerPaths.noPath}
-          element={<Navigate to={routerPaths.home} replace />}
-        />
-        <Route path={routerPaths.home} element={<HomePage />} />
-        <Route path={routerPaths.catFact} element={<CatFactPage />} />
-        <Route path={routerPaths.dogImage} element={<DogImagePage />} />
-        <Route path={routerPaths.shoppingList} element={<ShoppingListPage />} />
-      </Routes>
+      <div className="page_wrapper">
+        <Header />
+        <Routes>
+          <Route
+            path={routerPaths.noPath}
+            element={<Navigate to={routerPaths.home} replace />}
+          />
+          <Route path={routerPaths.home} element={<HomePage />} />
+          <Route path={routerPaths.catFact} element={<CatFactPage />} />
+          <Route path={routerPaths.dogImage} element={<DogImagePage />} />
+          <Route
+            path={routerPaths.shoppingList}
+            element={<ShoppingListPage />}
+          />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
