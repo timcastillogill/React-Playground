@@ -6,6 +6,7 @@ import CatFactPage from "../pages/CatFactPage/CatFact";
 import DogImagePage from "../pages/DogImagePage/DogImage";
 import Header from "../components/Header/Header";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
+import HowLongPage from "../pages/HowLongPage/HowLong";
 
 const Routing = () => {
   return (
@@ -20,6 +21,7 @@ const Routing = () => {
         <Route path={routerPaths.catFact} element={<CatFactPage />} />
         <Route path={routerPaths.dogImage} element={<DogImagePage />} />
         <Route path={routerPaths.shoppingList} element={<ShoppingListPage />} />
+        <Route path={routerPaths.howLong} element={<HowLongPage />} />
       </Routes>
     </BrowserRouter>
   );

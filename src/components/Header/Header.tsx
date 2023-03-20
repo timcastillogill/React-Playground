@@ -23,6 +23,9 @@ const Header = () => {
         <HeaderButton className="navButton shoppingListButton">
           <Link to={routerPaths.shoppingList}>Shopping List</Link>
         </HeaderButton>
+        <HeaderButton className="navButton howLongButton">
+          <Link to={routerPaths.howLong}>How Long Until..</Link>
+        </HeaderButton>
       </div>
     </header>
   );
