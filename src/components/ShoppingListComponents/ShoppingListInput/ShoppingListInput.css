@@ -9,12 +9,32 @@ hr {
   width: 100%;
 }
 
-.addItem {
+.addItem form {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .addItem h2 {
   margin-right: 0.5em;
+}
+
+button.addMoreButton:hover {
+  background: #4fbb6f;
+  color: white;
+}
+
+button.addMoreButton:hover::after {
+  content: " ++ ";
+}
+
+button.skipDuplicateButton:hover {
+  background: #e54e3c;
+  color: white;
+}
+
+button.skipDuplicateButton:hover::after {
+  content: " -- ";
 }

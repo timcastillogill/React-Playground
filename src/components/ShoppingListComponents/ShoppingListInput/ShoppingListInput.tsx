@@ -60,10 +60,10 @@ const ShoppingListInput: React.FC<Props> = ({
             <p>Duplicate! You don't need 2 of those...</p>
             <hr />
             <p>Or maybe you'd like to add an additional?</p>
-            <button onClick={handleUpdateToQuantity}>
+            <button className="addMoreButton" onClick={handleUpdateToQuantity}>
               Yes, Gimme more of that
             </button>
-            <button onClick={handleNoUpdate}>
+            <button className="skipDuplicateButton" onClick={handleNoUpdate}>
               No, I forgot it was already on the list...
             </button>
           </div>
