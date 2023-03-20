@@ -32,7 +32,7 @@ describe("Given the user has submitted an event", () => {
     const submitButton = screen.getByRole("button", { name: /submit/i });
     fireEvent.click(submitButton);
 
-    expect(eventNameInput.value).toBe("");
-    expect(dateInput.value).toBe("");
+    expect(eventNameInput).toBeEmptyDOMElement();
+    expect(dateInput).toBeEmptyDOMElement();
   });
 });
