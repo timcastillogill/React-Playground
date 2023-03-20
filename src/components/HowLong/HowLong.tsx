@@ -1,7 +1,11 @@
 import moment from "moment";
 import React, { ChangeEvent, useState } from "react";
 
-const HowLong = () => {
+interface Props {
+  addEvent: AddEvent;
+}
+
+const HowLong: React.FC<Props> = ({ addEvent }) => {
   const [dateOfEvent, setDateOfEvent] = useState("");
   const [nameOfEvent, setNameOfEvent] = useState("");
 
@@ -10,6 +14,7 @@ const HowLong = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    addEvent(dateOfEvent, nameOfEvent);
     setDateOfEvent("");
     setNameOfEvent("");
   };

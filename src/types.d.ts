@@ -16,3 +16,4 @@ type ChangeQuantityOfItem = (
 type AddShoppingListItem = (text: string) => void;
 type InputDuplicateCheck = ReactNode;
 type AdditionalItem = ReactNode;
+type AddEvent = (eventName: string, eventDate: string) => void;
