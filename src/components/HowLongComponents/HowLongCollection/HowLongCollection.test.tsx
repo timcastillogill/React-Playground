@@ -8,8 +8,9 @@ const mockEventInput = jest.mocked<typeof HowLongInput>(HowLongInput);
 
 describe("Given the user has inputted an event into the input", () => {
   beforeEach(() => {
-    const inputtedEvent = "My Birthday";
-    mockEventInput.mockReturnValue(inputtedEvent);
+    const inputtedEventName = "My Birthday";
+    const inputtedEventDate = "2024-02-23";
+    mockEventInput.mockReturnValue(inputtedEventName);
     jest.clearAllMocks();
   });
 
@@ -17,6 +18,6 @@ describe("Given the user has inputted an event into the input", () => {
     render(<HowLongCollection />);
 
     const eventList = screen.getByRole("list");
-    expect(eventList.firstChild.innerHTML).toBe("My Birthday");
+    expect(eventList.firstChild.innerHTML).toBe("My Birthday | 2024-02-23");
   });
 });

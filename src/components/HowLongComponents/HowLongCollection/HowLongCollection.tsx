@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import HowLongInput from "../HowLongInput/HowLongInput";
 
 const HowLongCollection = () => {
-  const [events, setEvents] = useState([
-    { id: 1, eventName: "My Birthday", date: "2023-02-23" },
+  const [events, setEvents] = useState<Event[]>([
+    { id: 1, eventName: "My Birthday", eventDate: "2024-02-23" },
   ]);
 
   const handleNewEvent = (eventName: string, eventDate: string) => {
@@ -12,9 +12,10 @@ const HowLongCollection = () => {
       {
         id: Math.floor(Math.random() * 1000),
         eventName: eventName,
-        date: eventDate,
+        eventDate: eventDate,
       },
     ]);
+    return false;
   };
 
   return (
@@ -23,7 +24,7 @@ const HowLongCollection = () => {
       <ul>
         {events.map((event) => (
           <li key={event.id}>
-            {event.eventName} | {event.date}
+            {event.eventName} | {event.eventDate}
           </li>
         ))}
       </ul>
