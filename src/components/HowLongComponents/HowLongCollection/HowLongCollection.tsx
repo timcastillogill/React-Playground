@@ -6,12 +6,23 @@ const HowLongCollection = () => {
     { id: 1, eventName: "My Birthday", date: "2023-02-23" },
   ]);
 
+  const handleNewEvent = (eventName: string, eventDate: string) => {
+    setEvents([
+      ...events,
+      {
+        id: Math.floor(Math.random() * 1000),
+        eventName: eventName,
+        date: eventDate,
+      },
+    ]);
+  };
+
   return (
     <section>
-      <HowLongInput />
+      <HowLongInput addEvent={handleNewEvent} />
       <ul>
         {events.map((event) => (
-          <li>
+          <li key={event.id}>
             {event.eventName} | {event.date}
           </li>
         ))}
