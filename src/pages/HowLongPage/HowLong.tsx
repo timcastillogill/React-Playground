@@ -1,8 +1,14 @@
 import React from "react";
-import HowLong from "../../components/HowLong/HowLong";
+import HowLongInput from "../../components/HowLongComponents/HowLongInput/HowLongInput";
+import HowLongCollection from "../../components/HowLongComponents/HowLongCollection/HowLongCollection";
 
 const HowLongPage = () => {
-  return <HowLong />;
+  return (
+    <section>
+      <HowLongInput />
+      <HowLongCollection />
+    </section>
+  );
 };
 
 export default HowLongPage;
