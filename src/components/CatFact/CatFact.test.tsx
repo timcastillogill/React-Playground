@@ -1,4 +1,4 @@
-import { getByText, render, screen, waitFor } from "@testing-library/react";
+import { getByText, render, screen } from "@testing-library/react";
 import React from "react";
 import CatFact from "./CatFact";
 import useCatFacts from "../../Hooks/useCatFacts";
