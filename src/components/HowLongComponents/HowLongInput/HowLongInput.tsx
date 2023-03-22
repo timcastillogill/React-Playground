@@ -5,7 +5,7 @@ interface Props {
   addEvent: AddEvent;
 }
 
-const HowLongInput: React.FC<Props> = ({ addEvent }) => {
+const HowLongInput = ({ addEvent }: Props) => {
   const [dateOfEvent, setDateOfEvent] = useState("");
   const [nameOfEvent, setNameOfEvent] = useState("");
 
