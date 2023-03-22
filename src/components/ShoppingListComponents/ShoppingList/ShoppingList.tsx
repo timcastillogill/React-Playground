@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
-import "./ShoppingListCollection.css";
+import "./ShoppingList.css";
 
 const ShoppingList = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
