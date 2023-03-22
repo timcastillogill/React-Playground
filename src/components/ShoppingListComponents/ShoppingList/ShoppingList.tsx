@@ -3,7 +3,7 @@ import ShoppingListInput from "../ShoppingListInput/ShoppingListInput";
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 import "./ShoppingListCollection.css";
 
-const ShoppingListCollection = () => {
+const ShoppingList = () => {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([
     { id: 1, quantity: 1, text: "tomatoes", complete: false },
     { id: 2, quantity: 2, text: "onions", complete: true },
@@ -122,4 +122,4 @@ const ShoppingListCollection = () => {
   );
 };
 
-export default ShoppingListCollection;
+export default ShoppingList;
