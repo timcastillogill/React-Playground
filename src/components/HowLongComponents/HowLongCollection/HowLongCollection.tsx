@@ -7,6 +7,9 @@ const HowLongCollection = () => {
   ]);
 
   const handleNewEvent = (eventName: string, eventDate: string) => {
+    if (eventName === "" || eventDate === "") {
+      throw new Error("Input Event name and Event Date");
+    }
     setEvents([
       ...events,
       {
