@@ -10,12 +10,12 @@ interface Props {
   decreaseQuantity: ChangeQuantityOfItem;
 }
 
-const ShoppingListItem: React.FC<Props> = ({
+const ShoppingListItem = ({
   shoppingListItem,
   toggleShoppingListItem,
   increaseQuantity,
   decreaseQuantity,
-}) => {
+}: Props) => {
   return (
     <li className="addedShoppingItem">
       <label

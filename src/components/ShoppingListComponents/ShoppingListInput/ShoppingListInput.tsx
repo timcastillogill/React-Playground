@@ -7,11 +7,11 @@ interface Props {
   additionalItem: AdditionalItem;
 }
 
-const ShoppingListInput: React.FC<Props> = ({
+const ShoppingListInput = ({
   addShoppingListItem,
   duplicateCheck,
   additionalItem,
-}) => {
+}: Props) => {
   const [item, setItem] = useState("");
   const [duplicate, setDuplicate] = useState(false);
 
