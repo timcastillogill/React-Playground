@@ -5,8 +5,6 @@ import useDogImage from "../../Hooks/useDogImage";
 const DogImage = () => {
   const { isLoading, hasError, dogImage, fetchDogImage } = useDogImage();
 
-  //   useEffect(dogImageCollector, []);
-
   const refreshDog = () => {
     fetchDogImage();
   };
