@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HowLongInput from "../HowLongInput/HowLongInput";
 
 const HowLongCollection = () => {
-  const [events, setEvents] = useState<Event[]>([
+  const [events, setEvents] = useState<EventDetails[]>([
     { id: 1, eventName: "My Birthday", eventDate: "2024-02-23" },
   ]);
 
