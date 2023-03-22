@@ -3,19 +3,19 @@ import addToBasket from "../../../assets/addToBasket.png";
 import removeFromBasket from "../../../assets/removeFromBasket.png";
 import "./ShoppingListItem.css";
 
-interface Props {
+type ShoppingListItemProps = {
   shoppingListItem: ShoppingListItem;
   toggleShoppingListItem: ToggleShoppingListItem;
   increaseQuantity: ChangeQuantityOfItem;
   decreaseQuantity: ChangeQuantityOfItem;
-}
+};
 
 const ShoppingListItem = ({
   shoppingListItem,
   toggleShoppingListItem,
   increaseQuantity,
   decreaseQuantity,
-}: Props) => {
+}: ShoppingListItemProps) => {
   return (
     <li className="addedShoppingItem">
       <label

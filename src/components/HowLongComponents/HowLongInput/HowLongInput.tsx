@@ -1,11 +1,11 @@
 import moment from "moment";
 import React, { ChangeEvent, useState } from "react";
 
-interface Props {
+type howLongInputProps = {
   addEvent: AddEvent;
-}
+};
 
-const HowLongInput = ({ addEvent }: Props) => {
+const HowLongInput = ({ addEvent }: howLongInputProps) => {
   const [dateOfEvent, setDateOfEvent] = useState("");
   const [nameOfEvent, setNameOfEvent] = useState("");
 

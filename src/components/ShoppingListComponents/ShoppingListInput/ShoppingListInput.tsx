@@ -1,17 +1,17 @@
 import React, { ChangeEvent, useState } from "react";
 import "./ShoppingListInput.css";
 
-interface Props {
+type ShoppingListInputProps = {
   addShoppingListItem: AddShoppingListItem;
   duplicateCheck: InputDuplicateCheck;
   additionalItem: AdditionalItem;
-}
+};
 
 const ShoppingListInput = ({
   addShoppingListItem,
   duplicateCheck,
   additionalItem,
-}: Props) => {
+}: ShoppingListInputProps) => {
   const [item, setItem] = useState("");
   const [duplicate, setDuplicate] = useState(false);
 

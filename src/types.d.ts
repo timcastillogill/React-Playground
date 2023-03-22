@@ -1,9 +1,9 @@
-interface ShoppingListItem {
+type ShoppingListItem = {
   id: number;
   quantity: number;
   text: string;
   complete: boolean;
-}
+};
 
 type ToggleShoppingListItem = (
   selectedShoppingListItem: ShoppingListItem
@@ -17,10 +17,10 @@ type AddShoppingListItem = (text: string) => void;
 type InputDuplicateCheck = ReactNode;
 type AdditionalItem = ReactNode;
 
-interface EventDetails {
+type EventDetails = {
   id: number;
   eventName: string;
   eventDate: string;
-}
+};
 
 type AddEvent = (eventName: string, eventDate: string) => void;
