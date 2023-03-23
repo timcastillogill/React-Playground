@@ -1,5 +1,6 @@
 import moment from "moment";
 import React, { ChangeEvent, useState } from "react";
+import "./HowLongInput.css";
 
 type howLongInputProps = {
   addEvent: AddEvent;
@@ -32,7 +33,7 @@ const HowLongInput = ({ addEvent }: howLongInputProps) => {
   };
 
   return (
-    <div>
+    <div className="eventInput">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -43,7 +44,6 @@ const HowLongInput = ({ addEvent }: howLongInputProps) => {
           onChange={handleEventNameChange}
         />
 
-        <label htmlFor="start">Date of exciting event: </label>
         <input
           type="date"
           id="eventDate"
@@ -54,7 +54,9 @@ const HowLongInput = ({ addEvent }: howLongInputProps) => {
           data-testid="eventDate"
           onChange={handleDateChange}
         />
-        <button type="submit">Submit</button>
+        <button className="ui-button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

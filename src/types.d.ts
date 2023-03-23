@@ -21,6 +21,7 @@ type EventDetails = {
   id: number;
   eventName: string;
   eventDate: string;
+  howLongUntil: string;
 };
 
 type AddEvent = (eventName: string, eventDate: string) => void;

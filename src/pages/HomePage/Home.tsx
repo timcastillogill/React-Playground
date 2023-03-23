@@ -12,7 +12,6 @@ const HomePage = () => {
         <DogImage />
         <CatFact />
         <ShoppingListPage />
-        <HowLongPage />
       </div>
     </section>
   );

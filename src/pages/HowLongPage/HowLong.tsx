@@ -1,9 +1,10 @@
 import React from "react";
 import HowLongCollection from "../../components/HowLongComponents/HowLongCollection/HowLongCollection";
+import "./HowLong.css";
 
 const HowLongPage = () => {
   return (
-    <section>
+    <section className="howLongUntilContents">
       <HowLongCollection />
     </section>
   );
