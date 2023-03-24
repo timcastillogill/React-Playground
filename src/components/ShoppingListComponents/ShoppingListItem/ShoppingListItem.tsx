@@ -46,7 +46,11 @@ const ShoppingListItem = ({
             increaseQuantity(shoppingListItem);
           }}
         >
-          <img className="basketIcon" src={addToBasket} alt="basketIcon" />
+          <img
+            className="basketIcon"
+            src={addToBasket}
+            alt="increaseBasketIcon"
+          />
         </button>
         <button
           test-id="decreaseQuantityButton"
@@ -57,7 +61,11 @@ const ShoppingListItem = ({
             decreaseQuantity(shoppingListItem);
           }}
         >
-          <img className="basketIcon" src={removeFromBasket} alt="basketIcon" />
+          <img
+            className="basketIcon"
+            src={removeFromBasket}
+            alt="decreaseBasketIcon"
+          />
         </button>
       </div>
     </li>
