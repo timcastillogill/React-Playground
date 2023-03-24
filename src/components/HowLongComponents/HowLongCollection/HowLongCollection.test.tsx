@@ -19,7 +19,7 @@ describe("Given the user has inputted an event into the input", () => {
 
     const eventList = screen.getByRole("list");
     const eventItem = screen.getByText(
-      "My Birthday | 2024-02-23" | "2 days to go!"
+      "🎉 in 2 days 🎉, we're totally pumped for you!"
     );
     expect(eventList).toContainElement(eventItem);
   });
