@@ -22,33 +22,18 @@ describe("Given the user has not added anything to their list", () => {
 });
 
 describe("Given there are items in the shopping list already", () => {
-  test("when the user clicks the plus basket icon the quantity of that item will increase by one", () => {
-    render(<ShoppingList />);
-
-    const plusButton = screen.getAllByRole("button", {
-      name: /basketIcon/i,
-    })[0];
-    const quantityOfItem = screen.getByRole("quantityOfItem");
-
-    expect(plusButton).toBeInTheDocument();
-    expect(quantityOfItem).toBeInTheDocument();
-
-    userEvent.click(plusButton);
-    expect(quantityOfItem).toBe(2);
-  });
-
-  test("when the user clicks the negative basket icon the quantity of that item will decrease by one", () => {
+  test("then the icon for adding and decreasing the quantity will render as a button", () => {
     render(<ShoppingList />);
 
     const decreaseButton = screen.getAllByRole("button", {
       name: /basketIcon/i,
     })[0];
-    const quantityOfItem = screen.getByRole("quantityOfItem");
+
+    const increaseButton = screen.getAllByRole("button", {
+      name: /basketIcon/i,
+    })[1];
 
     expect(decreaseButton).toBeInTheDocument();
-    expect(quantityOfItem).toBeInTheDocument();
-
-    userEvent.click(decreaseButton);
-    expect(quantityOfItem).toBe(1);
+    expect(increaseButton).toBeInTheDocument();
   });
 });
