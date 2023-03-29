@@ -4,12 +4,12 @@ import moment from "moment";
 import "./HowLongCollection.css";
 
 const HowLongCollection = () => {
-  const [events, setEvents] = useState<EventDetails[]>([
+  const [events, setEvents] = useState<OccasionDetails[]>([
     {
       id: 1,
-      eventName: "My Birthday",
-      eventDate: "2024-02-23",
-      howLongUntil: "in 2 days",
+      occasionName: "My Birthday",
+      // occasionDate: "2024-02-23",
+      // howLongUntil: "in 2 days",
     },
   ]);
 
@@ -22,12 +22,12 @@ const HowLongCollection = () => {
       ...events,
       {
         id: Math.floor(Math.random() * 1000),
-        eventName: eventName,
-        eventDate: eventDate,
-        howLongUntil: moment(
-          (parseInt(formatDate) + 1).toString(),
-          "YYYYMMDD"
-        ).fromNow(),
+        occasionName: eventName,
+        // occasionDate: eventDate,
+        // howLongUntil: moment(
+        //   (parseInt(formatDate) + 1).toString(),
+        //   "YYYYMMDD"
+        // ).fromNow(),
       },
     ]);
 
@@ -37,15 +37,15 @@ const HowLongCollection = () => {
   return (
     <div className="eventForm">
       <HowLongInput addEvent={handleNewEvent} />
-      <ul>
+      {/* <ul>
         {events.map((event) => (
           <li key={event.id}>
-            {`${event.eventName} starts `}
+            {`${event.occasionName} starts `}
             <span id="timeUntil">🎉 {event.howLongUntil} 🎉</span>, we're
             totally pumped for you!
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
