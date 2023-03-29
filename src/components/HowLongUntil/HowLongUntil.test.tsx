@@ -25,13 +25,27 @@ describe("HowLongUntil", () => {
       ).toBeInTheDocument();
     });
 
-    describe("When the user has typed an event name and hit 'Add Event'", () => {
+    describe("When the user has typed event names and hit 'Add Event'", () => {
       test("Then the event name is listed on the screen", () => {
         render(<HowLongUntil />);
         userEvent.type(screen.getByRole("textbox"), "New Event");
         userEvent.click(screen.getByRole("button", { name: "Add Event" }));
         const listItem = screen.getByRole("listitem").innerHTML;
         expect(listItem).toBe("New Event");
+      });
+
+      test("Then two event names will be listed on the screen", () => {
+        render(<HowLongUntil />);
+        userEvent.type(screen.getByRole("textbox"), "New Occasion 1");
+        userEvent.click(screen.getByRole("button", { name: "Add Event" }));
+        userEvent.type(screen.getByRole("textbox"), "New Occasion 2");
+        userEvent.click(screen.getByRole("button", { name: "Add Event" }));
+
+        const list = screen.getAllByRole("listitem");
+        const occasion1 = list[0].innerHTML;
+        const occasion2 = list[1].innerHTML;
+        expect(occasion1).toBe("New Occasion 1");
+        expect(occasion2).toBe("New Occasion 2");
       });
     });
   });
