@@ -7,4 +7,5 @@ export const routerPaths = {
   dogImage: "/dogImage",
   shoppingList: "/shoppingList",
   howLong: "/howLong",
+  howLongUntil: "/howLongUntil",
 };
