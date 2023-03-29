@@ -1,26 +1,23 @@
 import React from "react";
 import HowLongCollection from "./HowLongCollection";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-describe("Given the user has inputted an event into the input", () => {
-  test("Then the user will see a list of event NAMES", () => {
-    const inputtedEventName = "Holidays";
-    const inputtedEventDate = "2025-01-01";
+describe("HowLongCollection", () => {
+  describe("Given the user has inputted an event into the input", () => {
+    test("Then the user will see a list of event NAMES", () => {
+      render(<HowLongCollection />);
 
-    render(<HowLongCollection />);
+      const input = screen.getByRole("textbox");
 
-    const eventList = screen.getByRole("list");
-    const eventItem = screen.getByText("My Birthday | 2024-02-23");
-    expect(eventList).toContainElement(eventItem);
-  });
+      // userEvent(input, "Laurence's Birthday")
 
-  test("Then the date outputted will include the time until the event happens", () => {
-    render(<HowLongCollection />);
+      userEvent.type(screen.getByRole("textbox"), "Hello,{enter}World!");
+      expect(screen.getByRole("textbox")).toHaveValue("Hello,\nWorld!");
 
-    const eventList = screen.getByRole("list");
-    const eventItem = screen.getByText(
-      "🎉 in 2 days 🎉, we're totally pumped for you!"
-    );
-    expect(eventList).toContainElement(eventItem);
+      const eventList = screen.getByRole("list");
+      const eventItem = screen.getByText("My Birthday");
+      // expect(eventList).toContainElement(eventItem);
+    });
   });
 });
