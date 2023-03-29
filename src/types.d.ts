@@ -17,11 +17,11 @@ type AddShoppingListItem = (text: string) => void;
 type InputDuplicateCheck = ReactNode;
 type AdditionalItem = ReactNode;
 
-type EventDetails = {
+type OccasionDetails = {
   id: number;
-  eventName: string;
-  eventDate: string;
-  howLongUntil: string;
+  occasionName: string;
+  // occasionDate: string;
+  // howLongUntil: string;
 };
 
 type AddEvent = (eventName: string, eventDate: string) => void;
