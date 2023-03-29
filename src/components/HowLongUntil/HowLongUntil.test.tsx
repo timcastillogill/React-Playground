@@ -11,7 +11,7 @@ describe("HowLongUntil", () => {
         render(<HowLongUntil />);
 
         userEvent.type(screen.getByRole("textbox"), text);
-        userEvent.click(screen.getByRole("button"));
+        userEvent.click(screen.getByRole("button", { name: "Add Event" }));
         expect(screen.getByText(text)).toBeInTheDocument();
       });
     }
@@ -23,6 +23,16 @@ describe("HowLongUntil", () => {
       expect(
         screen.getByRole("button", { name: "Add Event" })
       ).toBeInTheDocument();
+    });
+
+    describe("When the user has typed an event name and hit 'Add Event'", () => {
+      test("Then the event name is listed on the screen", () => {
+        render(<HowLongUntil />);
+        userEvent.type(screen.getByRole("textbox"), "New Event");
+        userEvent.click(screen.getByRole("button", { name: "Add Event" }));
+        const listItem = screen.getByRole("listitem").innerHTML;
+        expect(listItem).toBe("New Event");
+      });
     });
   });
 });

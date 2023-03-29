@@ -12,7 +12,9 @@ const HowLongUntil = () => {
     <Fragment>
       <input type="text" onChange={handleEventChange} value={event} />
       <button>Add Event</button>
-      <p>{event}</p>
+      <ul>
+        <li>{event}</li>
+      </ul>
     </Fragment>
   );
 };
