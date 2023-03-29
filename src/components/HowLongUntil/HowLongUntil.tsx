@@ -11,7 +11,7 @@ const HowLongUntil = () => {
   return (
     <Fragment>
       <input type="text" onChange={handleEventChange} value={event} />
-      <button></button>
+      <button>Add Event</button>
       <p>{event}</p>
     </Fragment>
   );

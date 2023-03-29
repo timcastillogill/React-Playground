@@ -16,4 +16,13 @@ describe("HowLongUntil", () => {
       });
     }
   );
+
+  describe("Given the user wants to add a new event", () => {
+    test("Then a button called 'Add Event' is shown", () => {
+      render(<HowLongUntil />);
+      expect(
+        screen.getByRole("button", { name: "Add Event" })
+      ).toBeInTheDocument();
+    });
+  });
 });
