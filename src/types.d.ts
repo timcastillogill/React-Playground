@@ -20,7 +20,7 @@ type AdditionalItem = ReactNode;
 type OccasionDetails = {
   id: number;
   occasionName: string;
-  // occasionDate: string;
+  occasionDate: string;
   // howLongUntil: string;
 };
 

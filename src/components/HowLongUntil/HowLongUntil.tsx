@@ -2,6 +2,7 @@ import React, { ChangeEvent, Fragment, useState } from "react";
 
 const HowLongUntil = () => {
   const [occasionName, setOccasionName] = useState("");
+  const [occasionDate, setOccasionDate] = useState("");
   const [occasion, setOccasion] = useState<OccasionDetails[]>([
     {} as OccasionDetails,
   ]);
@@ -9,6 +10,11 @@ const HowLongUntil = () => {
   const handleOccasionChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setOccasionName(event.target.value);
+  };
+
+  const handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setOccasionDate(event.target.value);
   };
 
   const handleEventSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +25,7 @@ const HowLongUntil = () => {
         id: Math.floor(Math.random() * 1000),
         occasionName:
           occasionName.charAt(0).toUpperCase() + occasionName.slice(1),
+        occasionDate: occasionDate,
       },
     ]);
     setOccasionName("");
@@ -32,14 +39,29 @@ const HowLongUntil = () => {
           onChange={handleOccasionChange}
           value={occasionName}
         />
-        <button>Add Event</button>
+        <input
+          type="date"
+          aria-label="occasionDate"
+          value={occasionDate}
+          onChange={handleDateChange}
+        />
+        <button>Add Occasion</button>
       </form>
       {occasion.length > 0 && (
-        <ul>
-          {occasion.slice(1).map((occasionItem) => (
-            <li key={occasionItem.id}>{occasionItem.occasionName}</li>
-          ))}
-        </ul>
+        <table>
+          <tr>
+            <th>Occasion Name</th>
+            <th>Occasion Date</th>
+          </tr>
+          <tbody>
+            {occasion.map((occasionItem) => (
+              <tr>
+                <td>{occasionItem.occasionName}</td>
+                <td aria-label="dateColumn">{occasionItem.occasionDate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </Fragment>
   );

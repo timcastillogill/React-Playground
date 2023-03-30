@@ -8,7 +8,7 @@ const HowLongCollection = () => {
     {
       id: 1,
       occasionName: "My Birthday",
-      // occasionDate: "2024-02-23",
+      occasionDate: "2024-02-23",
       // howLongUntil: "in 2 days",
     },
   ]);
@@ -23,7 +23,7 @@ const HowLongCollection = () => {
       {
         id: Math.floor(Math.random() * 1000),
         occasionName: eventName,
-        // occasionDate: eventDate,
+        occasionDate: eventDate,
         // howLongUntil: moment(
         //   (parseInt(formatDate) + 1).toString(),
         //   "YYYYMMDD"
