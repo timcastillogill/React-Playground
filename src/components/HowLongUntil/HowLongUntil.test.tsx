@@ -81,33 +81,17 @@ describe("HowLongUntil", () => {
     });
   });
 
-  describe("When the user has entered a date and hit 'Add Event'", () => {
-    const setup = () => {
-      const utils = render(<HowLongUntil />);
-      const dateInput = screen.getByLabelText("occasionDate");
-      return {
-        utils,
-        dateInput,
-      };
-    };
+  describe.each([["2024-06-25"], ["2032-01-19"], ["2032-01-23"]])(
+    "Given the user has entered a date and hit 'Add Event'",
+    (text) => {
+      test(`Then the date: ${text} is listed on the screen`, () => {
+        render(<HowLongUntil />);
+        const dateInput = screen.getByLabelText("occasionDate");
+        fireEvent.change(dateInput, { value: text });
+        userEvent.click(screen.getByRole("button", { name: /add occasion/i }));
 
-    test("Then it will display on the screen", () => {
-      const { dateInput } = setup();
-
-      fireEvent.change(dateInput, { value: "2023-03-30" });
-      userEvent.click(screen.getByRole("button", { name: "Add Occasion" }));
-
-      expect(dateInput).toBeInTheDocument();
-    });
-
-    test("Then the date will be listed on the screen", () => {
-      const { dateInput } = setup();
-      userEvent.type(screen.getByRole("textbox"), "New Occasion 1");
-      fireEvent.change(dateInput, { value: "2023-03-30" });
-      userEvent.click(screen.getByRole("button", { name: /add occasion/i }));
-
-      const occasion1Date = screen.getAllByLabelText("dateColumn")[0];
-      expect(occasion1Date).toBeInTheDocument();
-    });
-  });
+        expect(screen.getByLabelText("dateColumn")).toBeInTheDocument();
+      });
+    }
+  );
 });

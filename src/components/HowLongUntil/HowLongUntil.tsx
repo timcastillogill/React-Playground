@@ -3,9 +3,7 @@ import React, { ChangeEvent, Fragment, useState } from "react";
 const HowLongUntil = () => {
   const [occasionName, setOccasionName] = useState("");
   const [occasionDate, setOccasionDate] = useState("");
-  const [occasion, setOccasion] = useState<OccasionDetails[]>([
-    {} as OccasionDetails,
-  ]);
+  const [occasion, setOccasion] = useState<Occasion[]>([]);
 
   const handleOccasionChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -19,6 +17,7 @@ const HowLongUntil = () => {
 
   const handleEventSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     setOccasion([
       ...occasion,
       {
@@ -28,6 +27,7 @@ const HowLongUntil = () => {
         occasionDate: occasionDate,
       },
     ]);
+
     setOccasionName("");
   };
 
@@ -49,15 +49,15 @@ const HowLongUntil = () => {
       </form>
       {occasion.length > 0 && (
         <table>
-          <tr>
-            <th>Occasion Name</th>
-            <th>Occasion Date</th>
-          </tr>
           <tbody>
+            <tr>
+              <th>Occasion Name</th>
+              <th>Occasion Date</th>
+            </tr>
             {occasion.map((occasionItem) => (
-              <tr>
-                <td>{occasionItem.occasionName}</td>
-                <td aria-label="dateColumn">{occasionItem.occasionDate}</td>
+              <tr key={occasionItem?.id}>
+                <td>{occasionItem?.occasionName}</td>
+                <td aria-label="dateColumn">{occasionItem?.occasionDate}</td>
               </tr>
             ))}
           </tbody>
