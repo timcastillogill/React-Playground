@@ -7,5 +7,5 @@ export const routerPaths = {
   dogImage: "/dogImage",
   shoppingList: "/shoppingList",
   howLongUntil: "/howLongUntil",
-  cocktail: "/cocktail",
+  tennis: "/tennis",
 };
