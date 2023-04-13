@@ -6,8 +6,9 @@ import CatFactPage from "../pages/CatFactPage/CatFact";
 import DogImagePage from "../pages/DogImagePage/DogImage";
 import Header from "../components/Header/Header";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
-import HowLongPage from "../pages/HowLongPage/HowLong";
+import HowLongPage from "../pages/HowLongUntilPage/HowLongUntil";
 import HowLongUntil from "../components/HowLongUntil/HowLongUntil";
+import Cocktail from "../pages/CocktailPage/Cocktail";
 
 const Routing = () => {
   return (
@@ -22,8 +23,8 @@ const Routing = () => {
         <Route path={routerPaths.catFact} element={<CatFactPage />} />
         <Route path={routerPaths.dogImage} element={<DogImagePage />} />
         <Route path={routerPaths.shoppingList} element={<ShoppingListPage />} />
-        <Route path={routerPaths.howLong} element={<HowLongPage />} />
-        <Route path={routerPaths.howLongUntil} element={<HowLongUntil />} />
+        <Route path={routerPaths.howLongUntil} element={<HowLongPage />} />
+        <Route path={routerPaths.cocktail} element={<Cocktail />} />
       </Routes>
     </BrowserRouter>
   );

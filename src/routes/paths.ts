@@ -6,6 +6,6 @@ export const routerPaths = {
   catFact: "/catFact",
   dogImage: "/dogImage",
   shoppingList: "/shoppingList",
-  howLong: "/howLong",
   howLongUntil: "/howLongUntil",
+  cocktail: "/cocktail",
 };

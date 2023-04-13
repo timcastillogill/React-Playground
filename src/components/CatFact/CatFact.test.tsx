@@ -1,4 +1,4 @@
-import { getByText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import React from "react";
 import CatFact from "./CatFact";
 import useCatFacts from "../../Hooks/useCatFacts";
@@ -22,7 +22,6 @@ describe("Given the Cat Fact Component renders with no error", () => {
     const catFactText = screen.getByTestId("catFactHeading");
 
     expect(catFactText).toBeInTheDocument();
-    // await waitFor(() => expect(useCatFacts).toHaveBeenCalledTimes(1));
   });
 
   test("then a load button is given to refresh the cat fact", () => {

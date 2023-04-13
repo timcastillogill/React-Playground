@@ -21,7 +21,7 @@ interface OccasionDetails {
   id: number;
   occasionName: string;
   occasionDate: string;
-  // howLongUntil: string;
+  timeUntil: string;
 }
 
 type Occasion = OccasionDetails | null;

@@ -24,11 +24,11 @@ const Header = () => {
           <Link to={routerPaths.shoppingList}>Shopping List</Link>
         </HeaderButton>
         <HeaderButton className="navButton howLongButton">
-          <Link to={routerPaths.howLong}>How Long Until..</Link>
+          <Link to={routerPaths.howLongUntil}>How Long Until..</Link>
         </HeaderButton>
-        <HeaderButton className="navButton howLongUntil">
-          <Link to={routerPaths.howLongUntil}>How Long Until NEW</Link>
-        </HeaderButton>
+        <HeaderButton className="navButton">
+          <Link to={routerPaths.cocktail}>Cocktail Finder</Link>
+          </HeaderButton>
       </div>
     </header>
   );
