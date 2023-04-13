@@ -7,7 +7,7 @@ import DogImagePage from "../pages/DogImagePage/DogImage";
 import Header from "../components/Header/Header";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 import HowLongPage from "../pages/HowLongUntilPage/HowLongUntil";
-import Tennis from "../pages/Tennis/Tennis";
+import Tennis from "../pages/TennisPage/Tennis";
 
 const Routing = () => {
   return (
