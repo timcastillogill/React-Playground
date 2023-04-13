@@ -23,6 +23,12 @@ const Header = () => {
         <HeaderButton className="navButton shoppingListButton">
           <Link to={routerPaths.shoppingList}>Shopping List</Link>
         </HeaderButton>
+        <HeaderButton className="navButton howLongButton">
+          <Link to={routerPaths.howLong}>How Long Until..</Link>
+        </HeaderButton>
+        <HeaderButton className="navButton howLongUntil">
+          <Link to={routerPaths.howLongUntil}>How Long Until NEW</Link>
+        </HeaderButton>
       </div>
     </header>
   );

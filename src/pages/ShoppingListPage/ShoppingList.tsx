@@ -1,11 +1,11 @@
 import React from "react";
-import ShoppingListCollection from "../../components/ShoppingListComponents/ShoppingListCollection/ShoppingListCollection";
+import ShoppingList from "../../components/ShoppingListComponents/ShoppingList/ShoppingList";
 import "./ShoppingList.css";
 
 const ShoppingListPage = () => {
   return (
     <section className="shoppingListSection">
-      <ShoppingListCollection />
+      <ShoppingList />
     </section>
   );
 };

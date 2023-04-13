@@ -1,4 +1,4 @@
-.shoppingListSection {
+section.howLongUntilContents {
   width: 55%;
   margin: 1em auto;
   grid-column-start: span 4;
@@ -8,7 +8,4 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

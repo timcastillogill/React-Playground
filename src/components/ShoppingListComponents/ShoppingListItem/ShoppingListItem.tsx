@@ -3,19 +3,19 @@ import addToBasket from "../../../assets/addToBasket.png";
 import removeFromBasket from "../../../assets/removeFromBasket.png";
 import "./ShoppingListItem.css";
 
-interface Props {
+type ShoppingListItemProps = {
   shoppingListItem: ShoppingListItem;
   toggleShoppingListItem: ToggleShoppingListItem;
   increaseQuantity: ChangeQuantityOfItem;
   decreaseQuantity: ChangeQuantityOfItem;
-}
+};
 
-const ShoppingListItem: React.FC<Props> = ({
+const ShoppingListItem = ({
   shoppingListItem,
   toggleShoppingListItem,
   increaseQuantity,
   decreaseQuantity,
-}) => {
+}: ShoppingListItemProps) => {
   return (
     <li className="addedShoppingItem">
       <label
@@ -46,7 +46,11 @@ const ShoppingListItem: React.FC<Props> = ({
             increaseQuantity(shoppingListItem);
           }}
         >
-          <img className="basketIcon" src={addToBasket} alt="basketIcon" />
+          <img
+            className="basketIcon"
+            src={addToBasket}
+            alt="increaseBasketIcon"
+          />
         </button>
         <button
           test-id="decreaseQuantityButton"
@@ -57,7 +61,11 @@ const ShoppingListItem: React.FC<Props> = ({
             decreaseQuantity(shoppingListItem);
           }}
         >
-          <img className="basketIcon" src={removeFromBasket} alt="basketIcon" />
+          <img
+            className="basketIcon"
+            src={removeFromBasket}
+            alt="decreaseBasketIcon"
+          />
         </button>
       </div>
     </li>

@@ -1,0 +1,19 @@
+.eventForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventForm ul {
+  list-style: none;
+  width: 90%;
+  padding: 0px;
+  text-align: center;
+  margin: auto;
+}
+
+span#timeUntil {
+  font-size: 1.2em;
+  border: dotted 5px orange;
+  padding: 3px;
+  line-height: 43px;
+}
