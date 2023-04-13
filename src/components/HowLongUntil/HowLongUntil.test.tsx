@@ -91,6 +91,7 @@ describe("HowLongUntil", () => {
         userEvent.click(screen.getByRole("button", { name: /add occasion/i }));
 
         expect(screen.getByLabelText("dateColumn")).toBeInTheDocument();
+        expect(screen.getByLabelText("timeUntil")).toBeInTheDocument();
       });
     }
   );
