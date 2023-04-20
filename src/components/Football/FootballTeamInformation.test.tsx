@@ -37,34 +37,27 @@ describe("Given the user navigates to the football information page", () => {
       };
     };
 
-    test("Then a table will appear on screen for the results", () => {
+    test("Then a card will appear on screen for the results with Richmond as the Team name", () => {
       const { getCompetitionsButton } = setup();
       userEvent.click(getCompetitionsButton);
 
-      expect(screen.getByRole("table")).toBeInTheDocument();
+      expect(
+        screen.getByRole("heading", { name: /team name: richmond/i })
+      ).toBeInTheDocument();
     });
 
-    test("Then the table will have headings 'Name' and 'Gender'", () => {
+    test("Then the card will have headings 'Name' and 'Debut'", () => {
       const { getCompetitionsButton } = setup();
       userEvent.click(getCompetitionsButton);
-      const colHeaderName = screen.getByRole("columnheader", { name: "Debut" });
-      const colHeaderGender = screen.getByRole("columnheader", {
-        name: "Team Name",
+      const headerTeamName = screen.getByRole("heading", {
+        name: /team name: richmond/i,
+      });
+      const headerTeamDebut = screen.getByRole("heading", {
+        name: /debut year: 1987/i,
       });
 
-      expect(colHeaderName).toBeInTheDocument();
-      expect(colHeaderGender).toBeInTheDocument();
-    });
-
-    test("Then the table will show the name and gender of a football player", () => {
-      const { getCompetitionsButton } = setup();
-      userEvent.click(getCompetitionsButton);
-
-      const nameRow = screen.getByText("1987");
-      const genderRow = screen.getByText("Richmond");
-
-      expect(nameRow).toBeInTheDocument();
-      expect(genderRow).toBeInTheDocument();
+      expect(headerTeamName).toBeInTheDocument();
+      expect(headerTeamDebut).toBeInTheDocument();
     });
   });
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import useFootballTeamData from "../../Hooks/useFootballInfo";
+import Card from "../ui/Card";
 
 const FootballTeamInformation = () => {
   const { isLoading, hasError, data } = useFootballTeamData();
@@ -18,18 +19,7 @@ const FootballTeamInformation = () => {
       )}
       {isLoading && !hasError && <h2>Loading...</h2>}
       {!hasError && !isLoading && (
-        <table>
-          <tbody>
-            <tr>
-              <th>Debut</th>
-              <th>Team Name</th>
-            </tr>
-            <tr>
-              <td>{data.debut}</td>
-              <td>{data.name}</td>
-            </tr>
-          </tbody>
-        </table>
+        <Card className={"teamCard"} name={data.name} debut={data.debut} />
       )}
     </section>
   );
