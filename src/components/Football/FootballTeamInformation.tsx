@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import useFootballTeamData from "../../Hooks/useFootballInfo";
 import Card from "../ui/Card";
 
 const FootballTeamInformation = () => {
-  const { isLoading, hasError, data } = useFootballTeamData();
+  const [teamId, setTeamId] = useState(14);
+  const { isLoading, hasError, data } = useFootballTeamData(teamId);
 
-  const getFootballCompInfo = (event: React.MouseEvent<HTMLButtonElement>) => {
-    return data;
+  const getFootballTeamInfo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const randomId = Math.floor(Math.random() * (18 - 1 + 1)) + 1;
+    setTeamId(randomId);
   };
 
   return (
     <section>
-      <button className="ui-button" onClick={getFootballCompInfo}>
+      <button className="ui-button" onClick={getFootballTeamInfo}>
         Get Info
       </button>
       {hasError && (

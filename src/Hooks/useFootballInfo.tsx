@@ -5,7 +5,7 @@ interface CompetitionInformation {
   name: string;
 }
 
-const useFootballInfo = () => {
+const useFootballTeamInfo = (teamId: number) => {
   const [data, setData] = useState<CompetitionInformation>(
     {} as CompetitionInformation
   );
@@ -18,7 +18,7 @@ const useFootballInfo = () => {
     setIsLoading(true);
     setHasError(false);
     try {
-      const res = await fetch(url);
+      const res = await fetch(`${url}${teamId}`);
       const json = await res.json();
       setData(json.teams[0]);
     } catch (error) {
@@ -29,7 +29,7 @@ const useFootballInfo = () => {
 
   useEffect(() => {
     fetchData();
-  }, [setData]);
+  }, [teamId]);
   return {
     isLoading,
     hasError,
@@ -37,4 +37,4 @@ const useFootballInfo = () => {
   };
 };
 
-export default useFootballInfo;
+export default useFootballTeamInfo;
