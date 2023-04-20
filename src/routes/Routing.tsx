@@ -7,7 +7,7 @@ import DogImagePage from "../pages/DogImagePage/DogImage";
 import Header from "../components/Header/Header";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 import HowLongPage from "../pages/HowLongUntilPage/HowLongUntil";
-import Tennis from "../pages/TennisPage/Tennis";
+import Football from "../pages/FootballPage/Football";
 
 const Routing = () => {
   return (
@@ -23,7 +23,7 @@ const Routing = () => {
         <Route path={routerPaths.dogImage} element={<DogImagePage />} />
         <Route path={routerPaths.shoppingList} element={<ShoppingListPage />} />
         <Route path={routerPaths.howLongUntil} element={<HowLongPage />} />
-        <Route path={routerPaths.tennis} element={<Tennis />} />
+        <Route path={routerPaths.football} element={<Football />} />
       </Routes>
     </BrowserRouter>
   );
