@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Football from "./Football";
+import FootballTeamInformation from "./FootballTeamInformation";
 import userEvent from "@testing-library/user-event";
-import useFootballInfo from "../../Hooks/useFootballInfo";
+import useFootballTeamData from "../../Hooks/useFootballInfo";
 
 jest.mock("../../Hooks/useFootballInfo");
 const mockUseFootballInfo =
-  jest.mocked<typeof useFootballInfo>(useFootballInfo);
+  jest.mocked<typeof useFootballTeamData>(useFootballTeamData);
 
 describe("Given the user navigates to the football information page", () => {
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe("Given the user navigates to the football information page", () => {
     jest.clearAllMocks();
   });
   test("When the user wants to see Stats on a football player, they can click a button called 'Get Info'", () => {
-    render(<Football />);
+    render(<FootballTeamInformation />);
 
     expect(
       screen.getByRole("button", { name: "Get Info" })
@@ -27,7 +27,7 @@ describe("Given the user navigates to the football information page", () => {
 
   describe("When the user clicks the 'Get Info' button", () => {
     const setup = () => {
-      const utils = render(<Football />);
+      const utils = render(<FootballTeamInformation />);
       const getCompetitionsButton = screen.getByRole("button", {
         name: "Get Info",
       });

@@ -1,8 +1,8 @@
 import React from "react";
-import useFootballInfo from "../../Hooks/useFootballInfo";
+import useFootballTeamData from "../../Hooks/useFootballInfo";
 
-const Football = () => {
-  const { isLoading, hasError, data } = useFootballInfo();
+const FootballTeamInformation = () => {
+  const { isLoading, hasError, data } = useFootballTeamData();
 
   const getFootballCompInfo = (event: React.MouseEvent<HTMLButtonElement>) => {
     return data;
@@ -35,4 +35,4 @@ const Football = () => {
   );
 };
 
-export default Football;
+export default FootballTeamInformation;
