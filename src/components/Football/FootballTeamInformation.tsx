@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useFootballTeamData from "../../Hooks/useFootballInfo";
 import Card from "../ui/Card";
+import "./FootballTeamInformation.css";
 
 const FootballTeamInformation = () => {
   const [teamId, setTeamId] = useState(14);
@@ -13,7 +14,7 @@ const FootballTeamInformation = () => {
   };
 
   return (
-    <section>
+    <section className="teamInformationContainer">
       <button className="ui-button" onClick={getFootballTeamInfo}>
         Get Info
       </button>
