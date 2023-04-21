@@ -1,8 +1,14 @@
 import React from "react";
-import Football from "../../components/Football/Football";
+import FootballTeamInformation from "../../components/Football/FootballTeamInformation/FootballTeamInformation";
+import FootballStandingsInformation from "../../components/Football/FootballStandingsInformation";
 
 const FootballPage = () => {
-  return <Football />;
+  return (
+    <section>
+      <FootballTeamInformation />
+      <FootballStandingsInformation />
+    </section>
+  );
 };
 
 export default FootballPage;

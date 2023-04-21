@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useFootballTeamData from "../../Hooks/useFootballInfo";
-import Card from "../ui/Card";
+import useFootballTeamData from "../../../Hooks/useFootballInfo";
+import Card from "../../ui/Card";
 import "./FootballTeamInformation.css";
 
 const FootballTeamInformation = () => {

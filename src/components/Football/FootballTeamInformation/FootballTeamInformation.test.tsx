@@ -2,9 +2,9 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import FootballTeamInformation from "./FootballTeamInformation";
 import userEvent from "@testing-library/user-event";
-import useFootballTeamData from "../../Hooks/useFootballInfo";
+import useFootballTeamData from "../../../Hooks/useFootballInfo";
 
-jest.mock("../../Hooks/useFootballInfo");
+jest.mock("../../../Hooks/useFootballInfo");
 const mockUseFootballInfo =
   jest.mocked<typeof useFootballTeamData>(useFootballTeamData);
 
