@@ -10,6 +10,7 @@ describe("FootballStandings", () => {
   beforeEach(() => {
     const mockData = [
       {
+        id: 1,
         name: "Richmond",
         rank: 2,
         played: 30,
