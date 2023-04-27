@@ -27,8 +27,8 @@ const Header = () => {
           <Link to={routerPaths.howLongUntil}>How Long Until..</Link>
         </HeaderButton>
         <HeaderButton className="navButton">
-          <Link to={routerPaths.cocktail}>Cocktail Finder</Link>
-          </HeaderButton>
+          <Link to={routerPaths.football}>Football Information</Link>
+        </HeaderButton>
       </div>
     </header>
   );
