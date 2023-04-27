@@ -3,8 +3,7 @@ import FootballStandingsInformation from "./FootballStandingsInformation";
 import useFootballStandings from "../../Hooks/useFootballStandings";
 
 jest.mock("../../Hooks/useFootballStandings");
-const mockUseFootballStandings =
-  jest.mocked<typeof useFootballStandings>(useFootballStandings);
+const mockUseFootballStandings = useFootballStandings as jest.Mock;
 
 describe("FootballStandings", () => {
   beforeEach(() => {
@@ -19,7 +18,6 @@ describe("FootballStandings", () => {
         pts: 123,
       },
     ];
-    const mockUseFootballStandings = useFootballStandings as jest.Mock;
     mockUseFootballStandings.mockReturnValue({
       isLoading: false,
       hasError: false,
