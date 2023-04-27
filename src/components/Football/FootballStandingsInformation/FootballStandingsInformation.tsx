@@ -31,6 +31,7 @@ const FootballStandingsInformation = () => {
 
   return (
     <section className="teamStandingsContainer">
+      <h2>Aussie Rules Team Standings</h2>
       {hasError && (
         <h3>
           ⚠️ Something has gone wrong with this table, we're working on it! ⚠️
