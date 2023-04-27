@@ -12,7 +12,7 @@ const useFootballTeamInfo = (teamId: number) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  const url = process.env.REACT_APP_FOOTBALL_API_BASE_URL as RequestInfo;
+  const url: RequestInfo = `${process.env.REACT_APP_FOOTBALL_API_BASE_URL}?q=teams;team=`;
 
   const fetchData = async () => {
     setIsLoading(true);

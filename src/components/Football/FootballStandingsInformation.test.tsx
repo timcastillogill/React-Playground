@@ -8,13 +8,16 @@ const mockUseFootballStandings =
 
 describe("FootballStandings", () => {
   beforeEach(() => {
-    const mockData = {
-      name: "Richmond",
-      wins: 10,
-      losses: 20,
-      rank: 2,
-      points: 123,
-    };
+    const mockData = [
+      {
+        name: "Richmond",
+        rank: 2,
+        played: 30,
+        wins: 10,
+        losses: 20,
+        pts: 123,
+      },
+    ];
     const mockUseFootballStandings = useFootballStandings as jest.Mock;
     mockUseFootballStandings.mockReturnValue({
       isLoading: false,
@@ -48,7 +51,21 @@ describe("FootballStandings", () => {
     }
   );
 
-  test("the table will show the user data on the team and their debut year", () => {
+  test("the table will show team standings data", () => {
     render(<FootballStandingsInformation />);
+
+    const teamName = screen.getByText("Richmond");
+    const rank = screen.getByRole("cell", { name: /10/i });
+    const played = screen.getByRole("cell", { name: /30/i });
+    const wins = screen.getByRole("cell", { name: /10/i });
+    const losses = screen.getByRole("cell", { name: /20/i });
+    const points = screen.getByRole("cell", { name: /123/i });
+
+    expect(teamName).toBeInTheDocument();
+    expect(rank).toBeInTheDocument();
+    expect(played).toBeInTheDocument();
+    expect(wins).toBeInTheDocument();
+    expect(losses).toBeInTheDocument();
+    expect(points).toBeInTheDocument();
   });
 });
