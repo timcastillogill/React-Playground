@@ -32,7 +32,9 @@ const FootballStandingsInformation = () => {
   return (
     <Fragment>
       {hasError && (
-        <h3>Something has gone wrong with this table, we're working on it!</h3>
+        <h3>
+          ⚠️ Something has gone wrong with this table, we're working on it! ⚠️
+        </h3>
       )}
       {isLoading && !hasError && <h2>Loading...</h2>}
       {!isLoading && !hasError && (

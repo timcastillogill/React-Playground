@@ -1,23 +1,25 @@
 import { render, screen } from "@testing-library/react";
 import FootballStandingsInformation from "./FootballStandingsInformation";
 import useFootballStandings from "../../Hooks/useFootballStandings";
+import { error } from "console";
 
 jest.mock("../../Hooks/useFootballStandings");
 const mockUseFootballStandings = useFootballStandings as jest.Mock;
 
 describe("FootballStandings", () => {
+  const mockData = [
+    {
+      id: 1,
+      name: "Richmond",
+      rank: 2,
+      played: 30,
+      wins: 10,
+      losses: 20,
+      pts: 123,
+    },
+  ];
+
   beforeEach(() => {
-    const mockData = [
-      {
-        id: 1,
-        name: "Richmond",
-        rank: 2,
-        played: 30,
-        wins: 10,
-        losses: 20,
-        pts: 123,
-      },
-    ];
     mockUseFootballStandings.mockReturnValue({
       isLoading: false,
       hasError: false,
@@ -66,5 +68,40 @@ describe("FootballStandings", () => {
     expect(wins).toBeInTheDocument();
     expect(losses).toBeInTheDocument();
     expect(points).toBeInTheDocument();
+  });
+
+  describe("Given there is an error while rendering the component", () => {
+    test("Then return an error message to the user", () => {
+      mockUseFootballStandings.mockReturnValue({
+        isLoading: false,
+        hasError: true,
+        data: [""],
+      });
+      jest.clearAllMocks();
+      render(<FootballStandingsInformation />);
+      const errorMessage = screen.getByRole("heading", {
+        name: /⚠️ something has gone wrong with this table, we're working on it! ⚠️/i,
+      });
+
+      expect(errorMessage).toBeInTheDocument();
+    });
+  });
+
+  describe("Given the component is still gathering the information when the screen renders", () => {
+    test("Then the component will show a loading message", () => {
+      mockUseFootballStandings.mockReturnValue({
+        isLoading: true,
+        hasError: false,
+        data: [""],
+      });
+      jest.clearAllMocks();
+      render(<FootballStandingsInformation />);
+
+      const loadingMessage = screen.getByRole("heading", {
+        name: /loading\.\.\./i,
+      });
+
+      expect(loadingMessage).toBeInTheDocument();
+    });
   });
 });
