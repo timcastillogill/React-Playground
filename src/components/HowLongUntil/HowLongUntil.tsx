@@ -60,25 +60,27 @@ const HowLongUntil = () => {
         />
         <button className="ui-button">Add Occasion</button>
       </form>
-      <br/>
-      <hr/>
       {occasion.length > 0 && (
-        <table className="occasionTable">
-          <tbody>
-            <tr>
-              <th>Occasion Name</th>
-              <th>Occasion Date</th>
-              <th>How Long Until</th>
-            </tr>
-            {occasion.map((occasionItem) => (
-              <tr key={occasionItem?.id}>
-                <td>{occasionItem?.occasionName}</td>
-                <td aria-label="dateColumn">{occasionItem?.occasionDate}</td>
-                <td aria-label="timeUntil">{occasionItem?.timeUntil}</td>
+        <>
+          <br />
+          <hr />
+          <table className="occasionTable">
+            <tbody>
+              <tr>
+                <th>Occasion Name</th>
+                <th>Occasion Date</th>
+                <th>How Long Until</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+              {occasion.map((occasionItem) => (
+                <tr key={occasionItem?.id}>
+                  <td>{occasionItem?.occasionName}</td>
+                  <td aria-label="dateColumn">{occasionItem?.occasionDate}</td>
+                  <td aria-label="timeUntil">{occasionItem?.timeUntil}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
       )}
     </Fragment>
   );
