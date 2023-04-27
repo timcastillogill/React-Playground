@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import useFootballStandings from "../../../Hooks/useFootballStandings";
+import "./FootballStandingsInformation.css";
 
 const FootballStandingsInformation = () => {
   const { isLoading, hasError, data } = useFootballStandings();
@@ -19,7 +20,7 @@ const FootballStandingsInformation = () => {
 
   const tableRows = data.map((teamData) => (
     <tr key={teamData.id}>
-      <td>{teamData.name}</td>
+      <td className="teamNameData">{teamData.name}</td>
       <td>{teamData.rank}</td>
       <td>{teamData.played}</td>
       <td>{teamData.wins}</td>
@@ -29,7 +30,7 @@ const FootballStandingsInformation = () => {
   ));
 
   return (
-    <Fragment>
+    <section className="teamStandingsContainer">
       {hasError && (
         <h3>
           ⚠️ Something has gone wrong with this table, we're working on it! ⚠️
@@ -39,12 +40,12 @@ const FootballStandingsInformation = () => {
       {!isLoading && !hasError && (
         <table>
           <tbody>
-            <tr>{tableHeaders}</tr>
+            {tableHeaders}
             {tableRows}
           </tbody>
         </table>
       )}
-    </Fragment>
+    </section>
   );
 };
 

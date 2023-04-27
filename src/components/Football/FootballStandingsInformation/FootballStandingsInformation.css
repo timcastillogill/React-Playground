@@ -1,0 +1,32 @@
+.teamStandingsContainer {
+  width: 70%;
+  margin: 1em auto;
+  grid-column-start: span 4;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.8em;
+}
+
+table {
+  width: 90%;
+  font-size: 1.2em;
+}
+
+.teamNameData {
+  text-align: left;
+}
+
+table th {
+  border-right: 2px solid black;
+}
+
+table td {
+  border-right: 2px solid black;
+}
