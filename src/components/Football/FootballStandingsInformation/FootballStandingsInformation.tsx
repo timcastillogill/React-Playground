@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import useFootballStandings from "../../Hooks/useFootballStandings";
-import { Http2ServerRequest } from "http2";
+import useFootballStandings from "../../../Hooks/useFootballStandings";
 
 const FootballStandingsInformation = () => {
   const { isLoading, hasError, data } = useFootballStandings();

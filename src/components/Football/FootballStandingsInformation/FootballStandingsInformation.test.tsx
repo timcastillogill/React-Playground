@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import FootballStandingsInformation from "./FootballStandingsInformation";
-import useFootballStandings from "../../Hooks/useFootballStandings";
-import { error } from "console";
+import useFootballStandings from "../../../Hooks/useFootballStandings";
 
-jest.mock("../../Hooks/useFootballStandings");
+jest.mock("../../../Hooks/useFootballStandings");
 const mockUseFootballStandings = useFootballStandings as jest.Mock;
 
 describe("FootballStandings", () => {

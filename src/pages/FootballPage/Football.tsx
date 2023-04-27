@@ -1,6 +1,6 @@
 import React from "react";
 import FootballTeamInformation from "../../components/Football/FootballTeamInformation/FootballTeamInformation";
-import FootballStandingsInformation from "../../components/Football/FootballStandingsInformation";
+import FootballStandingsInformation from "../../components/Football//FootballStandingsInformation/FootballStandingsInformation";
 
 const FootballPage = () => {
   return (
