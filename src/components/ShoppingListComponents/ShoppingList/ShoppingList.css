@@ -34,7 +34,9 @@ ul.shoppingListItems {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px;
+  background: rgba(139, 98, 161, 0.6);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 li.addedShoppingItem {

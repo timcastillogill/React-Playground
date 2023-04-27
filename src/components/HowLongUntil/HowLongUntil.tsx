@@ -41,6 +41,10 @@ const HowLongUntil = () => {
     setOccasionDate("");
   };
 
+  const clearTable = () => {
+    setOccasion([]);
+  };
+
   return (
     <Fragment>
       <form onSubmit={handleEventSubmit}>
@@ -80,6 +84,7 @@ const HowLongUntil = () => {
               ))}
             </tbody>
           </table>
+          <button onClick={clearTable}>Clear</button>
         </>
       )}
     </Fragment>
