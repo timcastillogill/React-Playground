@@ -11,22 +11,22 @@ const Header = () => {
         <h1 className="appName">React Playground</h1>
       </div>
       <div className="headerButtons">
-        <HeaderButton className="homeButton navButton">
+        <HeaderButton className="homeButton glowing-btn">
           <Link to={routerPaths.home}>Home</Link>
         </HeaderButton>
-        <HeaderButton className="navButton catButton">
+        <HeaderButton className="navButton glowing-btn">
           <Link to={routerPaths.catFact}>Cat Facts</Link>
         </HeaderButton>
-        <HeaderButton className="navButton dogButton">
+        <HeaderButton className="navButton glowing-btn">
           <Link to={routerPaths.dogImage}>Dog Images</Link>
         </HeaderButton>
-        <HeaderButton className="navButton shoppingListButton">
+        <HeaderButton className="navButton glowing-btn">
           <Link to={routerPaths.shoppingList}>Shopping List</Link>
         </HeaderButton>
-        <HeaderButton className="navButton howLongButton">
+        <HeaderButton className="navButton glowing-btn">
           <Link to={routerPaths.howLongUntil}>How Long Until..</Link>
         </HeaderButton>
-        <HeaderButton className="navButton">
+        <HeaderButton className="navButton glowing-btn">
           <Link to={routerPaths.football}>Football Information</Link>
         </HeaderButton>
       </div>
