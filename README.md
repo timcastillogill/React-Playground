@@ -1,4 +1,4 @@
-#React Playground
+# React Playground
 
 This project has served as my playground to try out parts of React driving my development through TDD.
 
