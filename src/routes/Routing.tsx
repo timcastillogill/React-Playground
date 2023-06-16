@@ -4,15 +4,15 @@ import { routerPaths } from "./paths";
 import HomePage from "../pages/HomePage/Home";
 import CatFactPage from "../pages/CatFactPage/CatFact";
 import DogImagePage from "../pages/DogImagePage/DogImage";
-import Header from "../components/Header/Header";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 import HowLongPage from "../pages/HowLongUntilPage/HowLongUntil";
 import Football from "../pages/FootballPage/Football";
+import DesktopNavBar from "../components/ui/Navbar/components/DesktopNavBar";
 
 const Routing = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <DesktopNavBar />
       <Routes>
         <Route
           path={routerPaths.noPath}

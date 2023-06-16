@@ -8,6 +8,7 @@ button.basket {
   padding: 0px;
   margin: 2px 20px;
   transition: transform 2s;
+  background: none;
 }
 
 button.basket:hover {

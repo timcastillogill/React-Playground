@@ -1,6 +1,6 @@
 import React from "react";
-import addToBasket from "../../../assets/addToBasket.png";
-import removeFromBasket from "../../../assets/removeFromBasket.png";
+import addToBasket from "../../../assets//images/addToBasket.png";
+import removeFromBasket from "../../../assets/images/removeFromBasket.png";
 import "./ShoppingListItem.css";
 
 type ShoppingListItemProps = {
