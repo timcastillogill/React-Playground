@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { routerPaths } from "../../routes/paths";
-import HeaderButton from "../ui/HeaderButton";
+import HeaderButton from "../ui/Navbar/HeaderButton";
 import "./Header.css";
 
 const Header = () => {
