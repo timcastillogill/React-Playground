@@ -41,7 +41,7 @@ const FootballStandingsInformation = () => {
       {!isLoading && !hasError && (
         <table>
           <tbody>
-            {tableHeaders}
+            <tr>{tableHeaders}</tr>
             {tableRows}
           </tbody>
         </table>
