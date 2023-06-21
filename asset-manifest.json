@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react_playground/static/css/main.3e09a1f9.css",
+    "main.js": "/react_playground/static/js/main.4008ae89.js",
+    "static/js/787.4880d76a.chunk.js": "/react_playground/static/js/787.4880d76a.chunk.js",
+    "static/media/pattern_with_eye.jpg": "/react_playground/static/media/pattern_with_eye.a552c1e5700148ded4c3.jpg",
+    "static/media/addToBasket.png": "/react_playground/static/media/addToBasket.f4ac499736568b1244f5.png",
+    "static/media/removeFromBasket.png": "/react_playground/static/media/removeFromBasket.bad391f2a7c217037f39.png",
+    "index.html": "/react_playground/index.html",
+    "main.3e09a1f9.css.map": "/react_playground/static/css/main.3e09a1f9.css.map",
+    "main.4008ae89.js.map": "/react_playground/static/js/main.4008ae89.js.map",
+    "787.4880d76a.chunk.js.map": "/react_playground/static/js/787.4880d76a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e09a1f9.css",
+    "static/js/main.4008ae89.js"
+  ]
+}
