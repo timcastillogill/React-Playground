@@ -12,11 +12,7 @@ const CatFact = () => {
   };
 
   const factRandomiser = () => {
-    let randomIndex = data[Math.floor(Math.random() * data.length)];
-    if (catFact === randomIndex["fact"]) {
-      factRandomiser();
-    }
-    return randomIndex["fact"];
+    return data["fact"];
   };
 
   useEffect(() => {
