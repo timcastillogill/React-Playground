@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 type StandingsInformation = {
   id: number;
@@ -18,7 +18,7 @@ const useFootballStandings = () => {
 
   const url: RequestInfo = `${process.env.REACT_APP_FOOTBALL_API_BASE_URL}?q=standings`;
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     setHasError(false);
     try {
@@ -29,11 +29,11 @@ const useFootballStandings = () => {
       setHasError(true);
     }
     setIsLoading(false);
-  };
+  }, [url]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
   return {
     isLoading,
     hasError,

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const useCatFacts = () => {
   const [data, setData] = useState<string[]>([]);
@@ -7,7 +7,7 @@ const useCatFacts = () => {
 
   const catURL = process.env.REACT_APP_CAT_FACT_URL as RequestInfo;
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     setHasError(false);
     try {
@@ -18,11 +18,11 @@ const useCatFacts = () => {
       setHasError(true);
     }
     setIsLoading(false);
-  };
+  }, [catURL]);
 
   useEffect(() => {
     fetchData();
-  }, [setData]);
+  }, [fetchData]);
 
   return {
     isLoading,

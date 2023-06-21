@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface CompetitionInformation {
   debut: number;
@@ -14,7 +14,7 @@ const useFootballTeamInfo = (teamId: number) => {
 
   const url: RequestInfo = `${process.env.REACT_APP_FOOTBALL_API_BASE_URL}?q=teams;team=`;
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     setHasError(false);
     try {
@@ -25,11 +25,11 @@ const useFootballTeamInfo = (teamId: number) => {
       setHasError(true);
     }
     setIsLoading(false);
-  };
+  }, [url]);
 
   useEffect(() => {
     fetchData();
-  }, [teamId]);
+  }, [fetchData]);
   return {
     isLoading,
     hasError,

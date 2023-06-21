@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const useDogImage = () => {
   const [dogImage, setDogImage] = useState<string>("");
@@ -7,7 +7,7 @@ const useDogImage = () => {
 
   const dogImageUrl = process.env.REACT_APP_DOG_IMAGE_URL as RequestInfo;
 
-  const fetchDogImage = async () => {
+  const fetchDogImage = useCallback(async () => {
     setIsLoading(true);
     setHasError(false);
     try {
@@ -18,11 +18,11 @@ const useDogImage = () => {
       setHasError(true);
     }
     setIsLoading(false);
-  };
+  }, [dogImageUrl]);
 
   useEffect(() => {
     fetchDogImage();
-  }, [setDogImage]);
+  }, [fetchDogImage]);
 
   return {
     isLoading,
