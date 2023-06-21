@@ -7,12 +7,12 @@ import DogImagePage from "../pages/DogImagePage/DogImage";
 import ShoppingListPage from "../pages/ShoppingListPage/ShoppingList";
 import HowLongPage from "../pages/HowLongUntilPage/HowLongUntil";
 import Football from "../pages/FootballPage/Football";
-import DesktopNavBar from "../components/ui/Navbar/components/DesktopNavBar";
+import Header from "../components/Header/Header";
 
 const Routing = () => {
   return (
     <BrowserRouter>
-      <DesktopNavBar />
+      <Header />
       <Routes>
         <Route
           path={routerPaths.noPath}
