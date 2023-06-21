@@ -25,7 +25,7 @@ const useFootballTeamInfo = (teamId: number) => {
       setHasError(true);
     }
     setIsLoading(false);
-  }, [url]);
+  }, [url, teamId]);
 
   useEffect(() => {
     fetchData();
