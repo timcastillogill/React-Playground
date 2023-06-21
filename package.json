@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://timcastillogill.github.io/react_playground",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
@@ -46,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "gh-pages": "^5.0.0"
   }
 }
