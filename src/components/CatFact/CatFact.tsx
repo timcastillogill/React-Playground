@@ -21,7 +21,7 @@ const CatFact = () => {
 
   useEffect(() => {
     getCatFact()!;
-  }, [data]);
+  });
 
   return (
     <section className="catFact">
