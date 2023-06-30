@@ -12,12 +12,11 @@ const CatFact = () => {
       const indexRandomiser = Math.floor(Math.random() * 10);
       setCatFact(data[indexRandomiser]["fact"]!);
     }
-    return catFact;
-  }, [data, catFact]);
+  }, [data]);
 
   useEffect(() => {
     getCatFact();
-  }, [data, getCatFact]);
+  }, [getCatFact]);
 
   return (
     <section className="catFact">
