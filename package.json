@@ -1,6 +1,6 @@
 {
   "name": "react-playground",
-  "homepage": "https://timcastillogill.github.io/react-playground/",
+  "homepage": "https://timcastillogill.github.io/react-playground/public",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
