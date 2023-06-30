@@ -5,7 +5,9 @@ body {
   font-family: "Arapey", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./assets/images/pattern_with_eye.jpg");
+  background-image: url("./assets/images/blossom-2.png");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 code {

@@ -34,7 +34,7 @@ ul.shoppingListItems {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(139, 98, 161, 0.6);
+  background: rgba(202, 80, 86, 0.2);
   padding: 10px;
   border-radius: 5px;
 }
