@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import useCatFacts from "../../Hooks/useCatFacts";
 import "./CatFact.css";
+import { useCallback } from "react";
 
 const CatFact = () => {
   const { isLoading, hasError, data } = useCatFacts();
   const [catFact, setCatFact] = useState("");
 
-  const getCatFact = async () => {
-    setCatFact(factRandomiser());
+  const getCatFact = useCallback(async () => {
+    if (data && data.length > 0) {
+      const indexRandomiser = Math.floor(Math.random() * 10);
+      setCatFact(data[indexRandomiser]["fact"]!);
+    }
     return catFact;
-  };
-
-  const factRandomiser = () => {
-    return data["fact"];
-  };
+  }, [data, catFact]);
 
   useEffect(() => {
-    getCatFact()!;
-  });
+    getCatFact();
+  }, [data, getCatFact]);
 
   return (
     <section className="catFact">
