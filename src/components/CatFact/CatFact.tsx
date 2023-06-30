@@ -6,13 +6,20 @@ import { useCallback } from "react";
 const CatFact = () => {
   const { isLoading, hasError, data } = useCatFacts();
   const [catFact, setCatFact] = useState("");
+  const [factIndex, setFactIndex] = useState(0);
+
+  const updateFactIndex = useCallback(() => {
+    if (factIndex >= 9) {
+      setFactIndex(0);
+    }
+    setFactIndex((prevCount) => prevCount + 1);
+  }, [factIndex]);
 
   const getCatFact = useCallback(async () => {
     if (data && data.length > 0) {
-      const indexRandomiser = Math.floor(Math.random() * 10);
-      setCatFact(data[indexRandomiser]["fact"]!);
+      setCatFact(data[factIndex]["fact"]!);
     }
-  }, [data]);
+  }, [data, factIndex]);
 
   useEffect(() => {
     getCatFact();
@@ -33,7 +40,7 @@ const CatFact = () => {
         </div>
       </div>
       <div className="factButton">
-        <button className="ui-button" onClick={getCatFact}>
+        <button className="ui-button" onClick={updateFactIndex}>
           Get me a Cat Fact
         </button>
       </div>
