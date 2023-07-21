@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Arapey:wght@400&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Arapey", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/images/blossom-2.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

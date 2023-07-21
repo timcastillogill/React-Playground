@@ -1,0 +1,17 @@
+section {
+  display: grid;
+  padding: 1em 0em;
+}
+
+section.shoppingListSection li {
+  list-style: none;
+}
+
+.homePageComponents {
+  display: grid;
+  grid-template-columns: 20% 20%;
+  grid-gap: 35px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}

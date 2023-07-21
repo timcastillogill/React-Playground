@@ -1,0 +1,36 @@
+.howLongUntilContents form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+.howLongUntilContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.howLongUntilContents input {
+  padding: 15px;
+  margin: 10px 0px;
+  border: 3px solid #271c39;
+  font-family: "Arapey", serif;
+  font-size: 0.95em;
+}
+
+input.occasionName {
+  width: 35%;
+}
+
+table.occasionTable {
+  width: 85%;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+}
+
+table th {
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}

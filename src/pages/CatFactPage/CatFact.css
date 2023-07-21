@@ -1,0 +1,6 @@
+.catFactCard {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  padding: 26px;
+}

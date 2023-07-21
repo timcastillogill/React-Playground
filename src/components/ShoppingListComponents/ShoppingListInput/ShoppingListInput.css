@@ -1,0 +1,83 @@
+.duplicateContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  color: black;
+  background: black;
+  width: 100%;
+}
+
+.addItem form {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.addItem h2 {
+  margin-right: 0.5em;
+}
+
+button.addMoreButton:hover {
+  background: #4fbb6f;
+  color: white;
+}
+
+button.skipDuplicateButton:hover {
+  background: #e54e3c;
+  color: white;
+}
+
+button.addMoreButton {
+  background-image: linear-gradient(-180deg, #122738, #39113e);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #f5f5de;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+}
+
+button.skipDuplicateButton {
+  background-image: linear-gradient(-180deg, #122738, #39113e);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #f5f5de;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+}
