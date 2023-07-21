@@ -33,5 +33,8 @@ jobs:
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          echo `REACT_APP_DOG_IMAGE_URL=${{ secrets.DOG_IMAGE_URL }}` >> .env
+          echo `REACT_APP_CAT_FACT_URL=${{ secrets.CAT_FACT_URL}}` >> .env
+          echo `REACT_APP_FOOTBALL_API_BASE_URL=${{ secrets.FOOTBALL_API_BASE_URL}}` >> .env
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
