@@ -14,7 +14,6 @@ const Routing = () => {
     <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
       <Header />
       <Routes>
-        <Route path="" element={""} />
         <Route
           path={routerPaths.noPath}
           element={<Navigate to={routerPaths.home} replace />}
