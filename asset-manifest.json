@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/react-playground/static/css/main.7428f667.css",
-    "main.js": "/react-playground/static/js/main.172bc6ac.js",
+    "main.js": "/react-playground/static/js/main.3c7ac7d2.js",
     "static/js/787.4880d76a.chunk.js": "/react-playground/static/js/787.4880d76a.chunk.js",
     "static/media/blossom-2.png": "/react-playground/static/media/blossom-2.383c997e6e88062a42ea.png",
     "static/media/addToBasket.png": "/react-playground/static/media/addToBasket.f4ac499736568b1244f5.png",
     "static/media/removeFromBasket.png": "/react-playground/static/media/removeFromBasket.bad391f2a7c217037f39.png",
     "index.html": "/react-playground/index.html",
     "main.7428f667.css.map": "/react-playground/static/css/main.7428f667.css.map",
-    "main.172bc6ac.js.map": "/react-playground/static/js/main.172bc6ac.js.map",
+    "main.3c7ac7d2.js.map": "/react-playground/static/js/main.3c7ac7d2.js.map",
     "787.4880d76a.chunk.js.map": "/react-playground/static/js/787.4880d76a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7428f667.css",
-    "static/js/main.172bc6ac.js"
+    "static/js/main.3c7ac7d2.js"
   ]
 }
