@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
@@ -12,11 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - uses: actions/checkout@v3
@@ -35,26 +30,17 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Install path-browserify
-        run: npm install path-browserify
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
-      - name: Path Browserify
-        run: node node_modules/path-browserify/index.js build/index.html > build/index-new.html
-
-      deploy:
-        needs: build
-        runs-on: ubuntu-latest
-
-        steps:
-        - name: Deploy with gh-pages
-        - name: Rename indexed HTML
-          run: mv build/index-new.html build/index.html
-
-          run: |
-            git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-            npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            REACT_APP_DOG_IMAGE_URL: ${{ secrets.REACT_APP_DOG_IMAGE_URL }}
-            REACT_APP_CAT_FACT_URL: ${{ secrets.REACT_APP_CAT_FACT_URL }}
-            REACT_APP_FOOTBALL_API_BASE_URL: ${{ secrets.REACT_APP_FOOTBALL_API_BASE_URL }}
+    steps:
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_DOG_IMAGE_URL: ${{ secrets.REACT_APP_DOG_IMAGE_URL }}
+          REACT_APP_CAT_FACT_URL: ${{ secrets.REACT_APP_CAT_FACT_URL }}
+          REACT_APP_FOOTBALL_API_BASE_URL: ${{ secrets.REACT_APP_FOOTBALL_API_BASE_URL }}
