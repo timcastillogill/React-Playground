@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import { routerPaths } from "./paths";
 import HomePage from "../pages/HomePage/Home";
 import CatFactPage from "../pages/CatFactPage/CatFact";
@@ -11,7 +11,7 @@ import Header from "../components/Header/Header";
 
 const Routing = () => {
   return (
-    <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
+    <HashRouter basename={`/${process.env.PUBLIC_URL}`}>
       <Header />
       <Routes>
         <Route
@@ -25,7 +25,7 @@ const Routing = () => {
         <Route path={routerPaths.howLongUntil} element={<HowLongPage />} />
         <Route path={routerPaths.football} element={<Football />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
