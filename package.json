@@ -23,6 +23,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "postdeploy": "path-browserify public/index.html > build/index.html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "path-browserify": "^1.0.1"
   }
 }

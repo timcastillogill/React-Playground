@@ -30,6 +30,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
 
+      - name: Install path-browserify
+        run: npm install path-browserify
+
+      - name: Path Browserify
+        run: npx path-browserify build/index.html > build/index-new.html
+
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
