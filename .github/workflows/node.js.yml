@@ -31,10 +31,10 @@ jobs:
       - run: npm test
 
       - name: Install path-browserify
-        run: npm install path-browserify
+        run: npm install -g path-browserify
 
       - name: Path Browserify
-        run: npx path-browserify build/index.html > build/index-new.html
+        run: path-browserify build/index.html > build/index-new.html
 
       - name: Deploy with gh-pages
         run: |
